@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Evaluación de Suficiencia Técnica SGI</title>
     <style>
-        /* ESTILOS GENERALES CORPORATIVOS ISO HUB - FONDO CLARO */
+        /* ESTILOS GENERALES CORPORATIVOS ISO HUB */
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background-color: #f8fafc !important; 
@@ -34,7 +34,7 @@
             text-transform: uppercase;
             letter-spacing: 0.5px;
             margin-top: 0;
-            border-bottom: 4px solid #ecc94b !important; 
+            border-bottom: 3px solid #ecc94b !important; 
             padding-bottom: 15px;
         }
         
@@ -42,57 +42,43 @@
         .active { display: block; }
         
         /* FORMULARIO DE INGRESO */
-        .form-group { margin-bottom: 20px; }
-        label { display: block; margin-bottom: 8px; font-size: 15px; color: #1e3a8a !important; font-weight: bold; }
+        .form-group { margin-bottom: 15px; }
+        .note-box { background: #fffbeb; border: 1px solid #fef3c7; padding: 10px; border-radius: 6px; margin-bottom: 20px; font-size: 13px; color: #92400e; font-weight: 500; }
+        label { display: block; margin-bottom: 6px; font-size: 14px; color: #1e3a8a !important; font-weight: bold; }
         input {
-            width: 100%; padding: 14px; background: #f1f5f9 !important; border: 2px solid #cbd5e1 !important;
-            color: #1e3a8a !important; border-radius: 6px; font-size: 16px; box-sizing: border-box;
-            font-weight: 500;
+            width: 100%; padding: 12px; background: #f1f5f9 !important; border: 2px solid #cbd5e1 !important;
+            color: #1e3a8a !important; border-radius: 6px; font-size: 15px; box-sizing: border-box;
         }
         .btn-start {
             width: 100%; background: #1e3a8a !important; color: #ffffff !important; border: none; padding: 16px;
             font-size: 17px; font-weight: bold; border-radius: 6px; cursor: pointer; text-transform: uppercase;
-            box-shadow: 0 4px 12px rgba(30, 58, 138, 0.2);
         }
         
-        /* AREA DE EVALUACIÓN */
-        .progress-bar {
-            background: #ecc94b !important; padding: 8px 18px; border-radius: 20px;
-            font-size: 13px; font-weight: bold; color: #1e3a8a !important; display: inline-block; margin-bottom: 20px;
-        }
-        .question-text { font-size: 20px; font-weight: bold; line-height: 1.5; color: #1e3a8a !important; margin-bottom: 25px; }
-        .option-btn {
-            display: block; width: 100%; background: #ffffff !important; color: #1e3a8a !important; border: 2px solid #cbd5e1 !important;
-            padding: 16px; margin-bottom: 12px; border-radius: 6px; text-align: left; font-size: 16px; cursor: pointer;
-            font-weight: 500;
-        }
-        .option-btn:hover { background: #e2e8f0 !important; border-color: #1e3a8a !important; }
-        
+        /* AREA JUEGO */
+        .progress-bar { background: #ecc94b !important; padding: 8px 18px; border-radius: 20px; font-size: 13px; font-weight: bold; color: #1e3a8a; display: inline-block; margin-bottom: 20px; }
+        .question-text { font-size: 20px; font-weight: bold; line-height: 1.5; color: #1e3a8a; margin-bottom: 25px; }
+        .option-btn { display: block; width: 100%; background: #ffffff !important; color: #1e3a8a; border: 2px solid #cbd5e1; padding: 15px; margin-bottom: 10px; border-radius: 6px; text-align: left; font-size: 16px; cursor: pointer; }
+        .option-btn:hover { background: #e2e8f0 !important; }
         .feedback { padding: 15px; border-radius: 6px; margin-top: 20px; display: none; font-size: 15px; line-height: 1.5; }
-        .correct { background: #d1fae5 !important; border-left: 5px solid #10b981 !important; color: #065f46 !important; }
-        .wrong { background: #fee2e2 !important; border-left: 5px solid #ef4444 !important; color: #991b1b !important; }
-        
-        .btn-next {
-            display: none; background: #ecc94b !important; color: #1e3a8a !important; border: none; padding: 12px 30px;
-            font-size: 15px; font-weight: bold; border-radius: 6px; cursor: pointer; margin: 20px 0 0 auto; text-transform: uppercase;
-        }
-        .result-title { font-size: 22px; font-weight: bold; color: #10b981; text-align: center; margin-bottom: 20px; }
-        
+        .correct { background: #d1fae5 !important; border-left: 5px solid #10b981 !important; }
+        .wrong { background: #fee2e2 !important; border-left: 5px solid #ef4444 !important; }
+        .btn-next { display: none; background: #ecc94b !important; color: #1e3a8a; border: none; padding: 12px 30px; font-size: 15px; font-weight: bold; border-radius: 6px; cursor: pointer; margin: 20px 0 0 auto; text-transform: uppercase; }
+
         /* ========================================================
-           DISEÑO REDISTRIBUIDO HORIZONTAL ABRUMADOR (TEXTOS GRANDES)
+           DISEÑO FINAL REDISTRIBUIDO HORIZONTAL A4
            ======================================================== */
         .cert-frame {
             background: #ffffff !important;
             color: #1e3a8a !important; 
-            padding: 40px 50px 35px 215px; 
+            padding: 40px 50px 30px 220px; 
             border: 2px solid #1e3a8a;
             border-radius: 4px;
-            margin-top: 20px;
+            margin-top: 15px;
             position: relative;
             box-shadow: 0 12px 35px rgba(30, 58, 138, 0.15);
             box-sizing: border-box;
             width: 100%;
-            min-height: 640px;
+            min-height: 650px;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
@@ -102,8 +88,8 @@
             content: '';
             position: absolute;
             top: 0; left: 0;
-            width: 165px; height: 100%;
-            background: linear-gradient(135deg, #1e3a8a 0%, #1e3a8a 78%, #ecc94b 78%, #ecc94b 83%, transparent 83%) !important;
+            width: 170px; height: 100%;
+            background: linear-gradient(135deg, #1e3a8a 0%, #1e3a8a 82%, #ecc94b 82%, #ecc94b 85%, transparent 85%) !important;
             z-index: 1;
             -webkit-print-color-adjust: exact !important;
             print-color-adjust: exact !important;
@@ -111,59 +97,52 @@
         
         .cert-content { position: relative; z-index: 2; width: 100%; display: flex; flex-direction: column; justify-content: space-between; height: 100%; flex-grow: 1; }
         
-        /* CABECERA CON TEXTOS GRANDES CENTRADOS */
         .cert-header { text-align: center; margin-bottom: 5px; }
-        .cert-logo-box { max-width: 145px; margin: 0 auto 5px auto; }
+        .cert-logo-box { max-width: 150px; margin: 0 auto 5px auto; }
         .cert-logo-box img { max-width: 100%; height: auto; }
         
-        .cert-title-main { font-family: 'Georgia', serif; font-size: 38px; font-weight: bold; color: #1e3a8a !important; margin: 0; text-align: center; letter-spacing: 1px; }
-        .cert-subtitle-main { font-size: 15px; letter-spacing: 2px; color: #1e3a8a !important; margin-top: 4px; text-transform: uppercase; font-weight: bold; text-align: center; }
+        .cert-title-main { font-family: 'Georgia', serif; font-size: 40px; font-weight: bold; color: #1e3a8a !important; margin: 0; }
+        .cert-subtitle-main { font-size: 16px; letter-spacing: 2px; color: #1e3a8a !important; margin-top: 5px; text-transform: uppercase; font-weight: bold; }
         
-        /* BLOQUE NUEVO: METADATOS AL MEDIO SUPERIOR */
-        .cert-top-metadata {
+        .cert-body { text-align: center; margin: 20px 0; }
+        .cert-recipient-label { font-size: 17px; font-style: italic; color: #475569; margin-bottom: 5px; }
+        .cert-recipient { font-family: 'Georgia', serif; font-size: 36px; font-weight: bold; color: #1e3a8a !important; border-bottom: 2px solid #1e3a8a; display: inline-block; padding: 0 40px; margin-bottom: 8px; text-transform: uppercase; }
+        .cert-doc { font-size: 14px; font-weight: bold; margin-bottom: 15px; color: #1e3a8a !important; }
+        .cert-company { font-size: 18px; font-weight: bold; color: #1e3a8a !important; margin-bottom: 25px; text-transform: uppercase; }
+
+        .cert-text { font-size: 17px; line-height: 1.6; margin: 0 auto; max-width: 700px; color: #1e3a8a !important; text-align: center; }
+        .cert-location { font-size: 13px; margin-top: 10px; font-style: italic; font-weight: 500; }
+
+        /* BASE DIVISORIA Y FIRMA ARRIBA */
+        .cert-signature-container {
             text-align: center;
-            margin: 10px auto;
-            font-size: 13px;
-            color: #1e3a8a !important;
-            font-weight: bold;
-            letter-spacing: 0.5px;
-            line-height: 1.5;
+            margin-top: 30px;
+            position: relative;
         }
+        .signature-block {
+            display: inline-block;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        .signature-img { height: 75px; width: auto; margin-bottom: -15px; position: relative; z-index: 3; }
+        .signature-data { font-size: 13px; line-height: 1.4; color: #1e3a8a !important; font-weight: bold; }
+
+        .cert-footer-table { width: 100%; border-collapse: collapse; margin-top: 5px; border-top: 2px solid #1e3a8a; }
+        .cert-footer-table td { vertical-align: middle; padding-top: 10px; color: #1e3a8a !important; font-size: 12px; font-weight: bold; }
         
-        /* CUERPO EXPANDIDO */
-        .cert-body { text-align: center; margin: 25px 0; }
-        .cert-recipient-label { font-size: 16px; font-style: italic; color: #475569; margin-bottom: 5px; }
-        .cert-recipient { font-family: 'Georgia', serif; font-size: 32px; font-weight: bold; color: #1e3a8a !important; border-bottom: 2px solid #1e3a8a; display: inline-block; padding: 0 30px; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.5px; }
-        .cert-doc { font-size: 14px; font-weight: bold; margin-bottom: 25px; color: #1e3a8a !important; text-transform: uppercase; }
+        .cert-f-left { width: 40%; text-align: left; font-family: monospace; }
+        .cert-f-right { width: 60%; text-align: right; }
         
-        .cert-text { font-size: 17px; line-height: 1.8; margin: 0 auto; max-width: 650px; color: #1e3a8a !important; text-align: center; font-weight: 500; }
-        .cert-location { font-size: 13px; margin-top: 15px; font-style: italic; color: #1e3a8a !important; }
-        
-        /* BASE RIGIDA EN TABLA */
-        .cert-footer-table { width: 100%; border-collapse: collapse; margin-top: auto; border-top: 1px solid #cbd5e1; }
-        .cert-footer-table td { vertical-align: bottom; padding-top: 15px; color: #1e3a8a !important; }
-        
-        .cert-f-left { width: 35%; text-align: left; font-size: 12px; font-family: monospace; font-weight: bold; }
-        
-        /* CENTRO: FIRMA DIGITAL CON TUS DATOS INTEGRADOS */
-        .cert-f-center { width: 65%; text-align: center; }
-        .signature-area { display: inline-block; width: 280px; border-top: 1px solid #1e3a8a; padding-top: 6px; font-size: 12px; text-align: center; position: relative; color: #1e3a8a !important; font-weight: bold; }
-        .signature-image { position: absolute; bottom: 62px; left: 50%; transform: translateX(-50%); height: 60px; width: auto; }
-        
-        .btn-action { background: #10b981 !important; color: white !important; border: none; padding: 14px 28px; font-size: 16px; font-weight: bold; border-radius: 8px; cursor: pointer; text-transform: uppercase; width: 100%; margin-top: 25px; }
-        .fail-box { text-align: center; padding: 30px; color: #1e3a8a; }
-        
-        /* AJUSTES IMPRESIÓN PDF */
+        .btn-action { background: #10b981 !important; color: white !important; border: none; padding: 15px 30px; font-size: 16px; font-weight: bold; border-radius: 8px; cursor: pointer; text-transform: uppercase; width: 100%; margin-top: 20px; }
+
         @media print {
             @page { size: A4 landscape; margin: 0; }
-            html, body { background: #ffffff !important; color: #000000 !important; padding: 0 !important; margin: 0 !important; }
-            .container { background: white !important; box-shadow: none !important; border: none !important; padding: 0 !important; max-width: 100% !important; width: 100% !important; }
-            h1, .progress-bar, .fail-box, .btn-action, .result-title { display: none !important; }
+            body, html { background: #ffffff !important; }
+            .container, h1, .progress-bar, .fail-box, .btn-action, p:not(.cert-text):not(.cert-location):not(.signature-data) { display: none !important; }
             #box-passed { display: block !important; }
-            .cert-frame { display: flex !important; border: 2px solid #1e3a8a !important; padding: 40px 40px 30px 215px !important; margin: 0 !important; width: 297mm !important; height: 210mm !important; box-sizing: border-box !important; page-break-inside: avoid; background-color: #ffffff !important; -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
-            .cert-frame::before { content: '' !important; background: linear-gradient(135deg, #1e3a8a 0%, #1e3a8a 78%, #ecc94b 78%, #ecc94b 83%, transparent 83%) !important; -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
-            .cert-footer-table td { color: #1e3a8a !important; display: table-cell !important; }
-            .cert-title-main, .cert-subtitle-main, .cert-recipient, .cert-doc, .cert-text, .cert-location, .cert-top-metadata { color: #1e3a8a !important; }
+            .cert-frame { display: flex !important; border: 2px solid #1e3a8a !important; padding: 40px 50px 30px 220px !important; margin: 0 !important; width: 297mm !important; height: 210mm !important; box-sizing: border-box !important; -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+            .cert-frame::before { content: '' !important; background: linear-gradient(135deg, #1e3a8a 0%, #1e3a8a 82%, #ecc94b 82%, #ecc94b 85%, transparent 85%) !important; }
+            .cert-footer-table td { color: #1e3a8a !important; }
         }
     </style>
 </head>
@@ -173,21 +152,27 @@
     
     <div class="screen active" id="scr-login">
         <h1>Sistemas de Gestión & Control de Riesgos</h1>
-        <p style="text-align:center; color:#475569; font-size:15px; margin-bottom:25px; font-weight: 500;">Evaluación Obligatoria de Competencias: OEA v4 & ISO 27001</p>
+        <div class="note-box">
+            ⚠️ Estos datos sirven para emitir su certificado. Coloque la información tal cual espera que aparezca en el mismo.
+        </div>
         <div class="form-group">
             <label>Nombres y Apellidos Completos:</label>
-            <input type="text" id="p-name" placeholder="Ej. Carlos Gamarra Benites">
+            <input type="text" id="p-name" placeholder="Ej. Carlos Alberto Gamarra Benites">
         </div>
         <div class="form-group">
             <label>Documento de Identidad / Cédula de Extranjería:</label>
-            <input type="text" id="p-dni" placeholder="Ej. DNI 44783080 o CE 0012345">
+            <input type="text" id="p-dni" placeholder="Ej. 44783080">
+        </div>
+        <div class="form-group">
+            <label>Empresa a la que pertenece:</label>
+            <input type="text" id="p-company" placeholder="Ej. ISO Hub Company S.A.C.">
         </div>
         <button class="btn-start" onclick="startEvaluation()">Iniciar Evaluación ➔</button>
     </div>
 
     <div class="screen" id="scr-quiz">
         <div class="progress-bar" id="quiz-progress">PREGUNTA 1 DE 10</div>
-        <div class="question-text" id="quiz-qtext">Cargando escenario operativo...</div>
+        <div class="question-text" id="quiz-qtext">Cargando...</div>
         <div id="quiz-options"></div>
         <div class="feedback" id="quiz-feedback"></div>
         <button class="btn-next" id="quiz-nextbtn" onclick="nextQuestion()">Siguiente Pregunta ➔</button>
@@ -195,240 +180,130 @@
 
     <div class="screen" id="scr-results">
         <div id="box-passed" style="display: none;">
-            <p class="result-title" style="color: #10b981; font-weight: bold; text-align: center;">🥇 ¡EVALUACIÓN APROBADA EXITOSAMENTE! 🥇</p>
+            <p style="text-align:center; color:#10b981; font-weight:bold; font-size:20px; margin-bottom:10px;">🥇 ¡EVALUACIÓN APROBADA EXITOSAMENTE! 🥇</p>
             
             <div class="cert-frame" id="printable-certificate">
                 <div class="cert-content">
                     
                     <div class="cert-header">
-                        <div class="cert-logo-box">
-                            <img src="logo.png" alt="Logo Empresa" onerror="this.onerror=null; this.parentElement.innerHTML='<span style=\'font-size:11px;color:#94a3b8;font-style:italic;\'>[ logo.png ]</span>';">
-                        </div>
+                        <div class="cert-logo-box"><img src="logo.png" alt="Logo" onerror="this.style.display='none'"></div>
                         <div class="cert-title-main">CERTIFICADO DE APROBACIÓN</div>
                         <div class="cert-subtitle-main">Sistemas de Gestión Integrados Corporativos</div>
-                    </div>
-                    
-                    <div class="cert-top-metadata">
-                        Desarrollado por: ISO Hub Company &nbsp;|&nbsp; Duración: 2 horas &nbsp;|&nbsp; Calificación: <span id="cert-score">18/20</span> &nbsp;|&nbsp; Emitido el: <span id="cert-date">27/05/2026</span>
                     </div>
                     
                     <div class="cert-body">
                         <div class="cert-recipient-label">Se otorga el presente certificado a:</div>
                         <div class="cert-recipient" id="cert-fullname">CARLOS GAMARRA BENITES</div>
-                        <div class="cert-doc" id="cert-docid">DOCUMENTO DE IDENTIDAD / CÉDULA DE EXTRANJERÍA: 44783080</div>
+                        <div class="cert-doc" id="cert-docid">DOCUMENTO DE IDENTIDAD: 44783080</div>
+                        <div class="cert-company">TRABAJADOR DE LA EMPRESA: <span id="cert-companyname">EMPRESA EJEMPLO S.A.</span></div>
                         
                         <div class="cert-text">
                             Por haber completado y aprobado satisfactoriamente la evaluación de suficiencia técnica en el <strong>Taller Operativo de la Cadena Logística Internacional Segura OEA Versión 4 (SUNAT) y los controles de Seguridad de la Información e Infraestructura Digital ISO 27001:2022</strong>.
                         </div>
-                        <div class="cert-location">Realizado en el centro de formación virtual de ISO Hub Company</div>
+                        <div class="cert-location">Realizado en el centro de formación virtual de ISO Hub Company. <br> Desarrollado por: ISO Hub Company | Calificación: <span id="cert-score">18/20</span></div>
                     </div>
                     
+                    <div class="cert-signature-container">
+                        <div class="signature-block">
+                            <img src="firma.png" class="signature-img" onerror="this.style.display='none'">
+                            <div class="signature-data">
+                                Ing. Carlos Gamarra Benites<br>
+                                Operaciones - ISO Hub Company S.A.C.<br>
+                                DNI n° 44783080 / CIP 234048
+                            </div>
+                        </div>
+                    </div>
+
                     <table class="cert-footer-table">
                         <tr>
-                            <td class="cert-f-left">
-                                Certificado N°: <br><span id="cert-unique-id" style="font-family:monospace;">ISOHUB-2026-XXXXXX</span>
-                            </td>
-                            
-                            <td class="cert-f-center">
-                                <div class="signature-area">
-                                    <img src="firma.png" class="signature-image" onerror="this.style.display='none'">
-                                    <p style="margin: 0; font-size: 13px; color:#1e3a8a;">Ing. Carlos Gamarra Benites</p>
-                                    <p style="margin: 2px 0 0 0; color: #64748b; font-size: 11px; font-weight: 500;">Consultor ISO - ISO Hub Company<br>DNI n° 44783080 - CIP n° 234048</p>
-                                </div>
-                            </td>
+                            <td class="cert-f-left">Certificado N°: <span id="cert-unique-id">ISOHUB-2026-XXXXXX</span></td>
+                            <td class="cert-f-right">Duración: 2 horas | Emitido el: <span id="cert-date">27/05/2026</span></td>
                         </tr>
                     </table>
                     
                 </div>
             </div>
             
-            <button class="btn-action" onclick="window.print()">📥 Guardar Certificado en PDF / Imprimir</button>
+            <button class="btn-action" onclick="window.print()">📥 Descargar Certificado en PDF</button>
         </div>
 
-        <div id="box-failed" class="fail-box" style="display: none;">
-            <h2 style="color: #ef4444; margin-top: 0;">Evaluación No Aprobada</h2>
-            <p style="font-size: 18px;">Tu puntuación fue de <span id="fail-score" style="font-weight:bold; color:#ef4444;">08/20</span>.</p>
-            <p style="color: #475569; font-size: 15px; line-height: 1.6;">El puntaje mínimo requerido para obtener la certificación es de 14/20 (7 respuestas correctas). Por favor, repasa las directrices del Sistema de Gestión de Control de Riesgos e inténtalo nuevamente.</p>
-            <button class="btn-start" style="background:#475569 !important; color:white !important; margin-top:20px;" onclick="window.location.reload()">Reintentar Evaluación ⟳</button>
+        <div id="box-failed" class="fail-box" style="display: none; text-align: center; padding: 40px;">
+            <h2 style="color: #ef4444;">Evaluación No Aprobada</h2>
+            <p>Puntaje: <span id="fail-score" style="font-weight:bold;">08/20</span>. El mínimo es 14/20.</p>
+            <button class="btn-start" style="margin-top:20px;" onclick="window.location.reload()">Reintentar Evaluación ⟳</button>
         </div>
     </div>
 </div>
 
 <script>
     const bank = [
-        { 
-            q: "Un conductor logístico reporta que sufrió un 'blackout' o pérdida de señal GPS de 35 minutos en una ruta no autorizada de la provincia. Según el estándar OEA v4 (SUNAT), ¿cuál es el protocolo obligatorio inmediato?", 
-            options: [
-                { text: "Esperar el arribo regular del contenedor al terminal de almacenamiento y asentar la observación en el acta de fin de mes.", correct: false, r: "Postergar la verificación de la unidad incrementa críticamente el riesgo de contaminación de carga en zonas desprotegidas." }, 
-                { text: "Ordenar la detención inmediata de la unidad en un punto seguro y ejecutar una reinspección física del precinto de botella antes de liberar el contenedor.", correct: true, r: "El estándar OEA v4 exige detener preventivamente la cadena logística ante pérdidas críticas de trazabilidad satelital." }, 
-                { text: "Archivar la alerta si el chofer afirma por llamada de celular que la anomalía se debió únicamente a la geografía de la zona.", correct: false, r: "La normativa aduanera prohíbe basar el control de seguridad exclusivamente en declaraciones verbales del chofer." }
-            ] 
-        },
-        { 
-            q: "Bajo la norma internacional ISO 27001:2022, si un colaborador clave del área de comercio exterior cesa sus funciones en la empresa, ¿qué control específico del Anexo A se vulnera directamente si sus accesos a las nubes compartidas siguen activos por 48 horas?", 
-            options: [
-                { text: "Control A.5.1 - Políticas generales para la protección global de la información.", correct: false, r: "Este requisito enmarca la gobernanza documental y de políticas directivas de la empresa, no la baja de accesos." }, 
-                { text: "Control A.6.5 - Terminación o cambio de relación laboral.", correct: true, r: "El control A.6.5 estipula explícitamente la deshabilitación síncrona e inmediata de accesos lógicos y físicos tras un cese." }, 
-                { text: "Control A.8.20 - Marcos operativos de ciberseguridad aplicados a redes perimetrales.", correct: false, r: "Este control se enfoca en la arquitectura técnica de switches, enrutadores y firewalls de red." }
-            ] 
-        },
-        { 
-            q: "Para cumplir satisfactoriamente con las auditorías de fiscalización aduanera de la SUNAT, ¿cuál es el tiempo mínimo mandatorio que deben salvaguardarse los registros videográficos (CCTV) en almacenes y terminales autorizados?", 
-            options: [
-                { text: "15 días calendario de almacenamiento continuo local de servidores.", correct: false, r: "Es un marco de tiempo insuficiente para auditorías o investigaciones de reclamos internacionales aduaneros." }, 
-                { text: "30 días calendario de almacenamiento continuo en un formato digital e inalterable.", correct: true, r: "El marco regulatorio aduanero peruano exige un piso base de 30 días calendario de retención continua de video operativa." }, 
-                { text: "6 meses completos alineados al periodo de abandono aduanero legal de mercancías.", correct: false, r: "El estándar obligatorio base dictado para la retención de registros de CCTV comerciales es de 30 días calendario." }
-            ] 
-        },
-        { 
-            q: "Durante una inspección técnica pre-operativa de los 17 puntos a un contenedor vacío antes del llenado, se observa que los pernos del GenSet (motor de frío) brillan como nuevos, mientras el chasis tiene óxido natural. ¿Qué acción corresponde?", 
-            options: [
-                { text: "Aprobar el contenedor ya que el cambio de pernos indica un correcto mantenimiento mecánico por parte del proveedor.", correct: false, r: "Las asimetrías extremas de desgaste estructural son indicadores clásicos de manipulación física o riesgo de dobles fondos." }, 
-                { text: "Rechazar la unidad de transporte, paralizar el proceso de llenado y levantar un reporte de alerta por sospecha de alteración física.", correct: true, r: "La inspección de los 17 puntos OEA busca detectar anomalías estructurales sutiles para prevenir dobles fondos." }, 
-                { text: "Colocar doble precinto de alta seguridad ISO 17712 en las barras de las compuertas para compensar la anomalía.", correct: false, r: "El sello de las puertas no mitiga ni protege contra una alteración estructural en el bloque interno del motor." }
-            ] 
-        },
-        { 
-            q: "Un auditor interno detecta que para evitar sobrecostos en licencias de software corporativo, todo el equipo de despacho comparte las credenciales de un único usuario administrador. ¿Qué principio e ISO se vulnera?", 
-            options: [
-                { text: "El control A.8.2 de ISO 27001, destruyendo el principio de No Repudio y la asignación individual de responsabilidades técnicas.", correct: true, r: "Al usar cuentas genéricas o compartidas se pierde por completo la trazabilidad técnica de quién ejecutó o modificó un dato operativo crítico." }, 
-                { text: "El control A.5.15 de gestión de activos de información física corporativa.", correct: false, r: "El control A.5.15 administra el inventario de hardware y clasificación de la data, no las cuentas de acceso lógico." }, 
-                { text: "La cláusula de control operacional de contratistas externos y subcontratación.", correct: false, r: "Aplica para personal externo contratado, no regula la autenticación técnica interna de los sistemas operativos." }
-            ] 
-        },
-        { 
-            q: "El estándar de asociados de negocio de la OEA Versión 4 exige cruzar los datos de clientes y proveedores en bases de datos restrictivas (OFAC/SBS). ¿Cuál es el plazo límite para notificar una alerta positiva detectada interna?", 
-            options: [
-                { text: "Dentro de las 24 horas posteriores a la detección obligatoria del hallazgo operativa.", correct: true, r: "OEA v4 exige un flujo inmediato de comunicación de 24 horas ante alertas de lavado de activos o listas restrictivas OFAC." }, 
-                { text: "Al cierre del ejercicio fiscal contable de la empresa mediante el informe anual de control.", correct: false, r: "Esperar al cierre anual permitiría operaciones comerciales continuas con entidades de altísimo riesgo legal." }, 
-                { text: "A los 5 días hábiles del mes posterior para calzar con la declaración aduanera de SUNAT.", correct: false, r: "Los plazos de control de riesgos delictivos en comercio exterior exigen una respuesta inmediata operativa de 24 horas." }
-            ] 
-        },
-        { 
-            q: "Al auditar las estaciones de trabajo de los operadores de balanza y control de accesos perimetrales, se encuentra que las contraseñas técnicas están escritas en post-its pegados debajo del teclado. ¿Qué control ISO 27001 está fallando?", 
-            options: [
-                { text: "Control A.7.4 - Seguridad física de los perímetros de la planta operativa.", correct: false, r: "El control A.7.4 evalúa barreras físicas como muros, rejas y esclusas de acceso, no políticas de escritorios limpios." }, 
-                { text: "Control A.8.5 - Autenticación segura y el manejo estricto de contraseñas confidenciales.", correct: true, r: "Las contraseñas visibles anulan la efectividad de los accesos protegidos corporativos. Rompe las reglas técnicas de autenticación segura." }, 
-                { text: "Control A.8.24 - Uso adecuado de criptografía avanzada en bases de datos de la nube.", correct: false, r: "La criptografía ve algoritmos de cifrado de bases de datos de la nube, no el comportamiento físico del usuario." }
-            ] 
-        },
-        { 
-            q: "En una inspección de seguridad OEA para transportistas locales de furgones cerrados, ¿cuál es el número de puntos críticos estructurales mínimos que se deben inspeccionar obligatoriamente?", 
-            options: [
-                { text: "El criterio estándar de los 17 puntos de control físico perimetral.", correct: false, r: "Los 17 puntos aplican específicamente para contenedores de carga marítima internacional cerrada y unidades de arrastre." }, 
-                { text: "El criterio estandarizado de los 7 puntos de inspección física para camiones furgones locales cerrados.", correct: true, r: "Para vehículos de transporte local (furgones cerrados), la SUNAT dictamina un protocolo específico de 7 puntos críticos operativos." }, 
-                { text: "Únicamente 3 puntos focalizados técnicos: llantas, tanque de combustible y cabina de conducción.", correct: false, r: "Dejar zonas estructurales críticas sin revisar abre flancos operativos para el transporte ilegítimo de elementos." }
-            ] 
-        },
-        { 
-            q: "Con la finalidad de garantizar la protección de datos frente a conexiones remotas (Home Office), ¿qué mecanismo tecnológico exige la ISO 27001 para validar la identidad técnica de los coordinadores logísticos en la nube?", 
-            options: [
-                { text: "Uso mandatorio de Factor de Doble Autenticación (MFA) complementado con redes privadas cifradas (VPN corporativa).", correct: true, r: "El MFA añade una capa informática robusta asegurando que solo el usuario técnico verificado acceda a la data operativa corporativa." }, 
-                { text: "Modificar el nombre de usuario de las cuentas corporativas cada quince días calendario operativa.", correct: false, r: "Cambiar nombres de usuario de forma constante no frena un ataque cibernético de fuerza bruta si la contraseña es débil." }, 
-                { text: "Instalar únicamente software antivirus comercial gratuito en las computadoras personales de los empleados remotos.", correct: false, r: "El antivirus protege el sistema operativo de malware local, pero no asegura la validación técnica de la identidad." }
-            ] 
-        },
-        { 
-            q: "Bajo la ley de aduanas y los lineamientos del operador OEA, ¿qué estatus legal o condición contractual se exige de forma mandatoria respecto a la subcontratación unilateral del transporte logístico en la cadena de distribución?", 
-            options: [
-                { text: "Se permite la subcontratación libre y unilateral para agilizar la fluidez del puerto operativo.", correct: false, r: "La subcontratación ciega destruye por completo el control de confiabilidad y de la cadena de suministro internacional OEA." }, 
-                { text: "Existe una prohibición total de subcontratación unilateral, requiriendo autorización previa y expresa por escrito del mandante corporativo.", correct: true, r: "Para no romper la trazabilidad técnica OEA, cualquier subcontratación operativa debe ser auditada, visada y autorizada por escrito formalmente." }, 
-                { text: "Se delega la responsabilidad civil íntegra al conductor contratado mediante una declaración jurada simple de cumplimiento aduanero.", correct: false, r: "Las declaraciones juradas técnicas no eximen a la empresa principal de las responsabilidades aduaneras ni de la debida diligencia." }
-            ] 
-        }
+        { q: "Un conductor logístico reporta que sufrió un 'blackout' o pérdida de señal GPS de 35 minutos en una ruta no autorizada de la provincia. Según el estándar OEA v4 (SUNAT), ¿cuál es el protocolo obligatorio inmediato?", options: [{ text: "Esperar el arribo regular del contenedor.", correct: false, r: "Fallo. Postergar incrementa el riesgo de contaminación." }, { text: "Ordenar detención inmediata y reinspección física del precinto.", correct: true, r: "OEA v4 exige detener la cadena ante pérdida de trazabilidad." }, { text: "Archivar la alerta si el chofer explica por celular.", correct: false, r: "Fallo. Se prohibe basar seguridad en declaraciones verbales." }] },
+        { q: "Bajo la norma ISO 27001:2022, si un colaborador clave cesa funciones, ¿qué control se vulnera si sus accesos siguen activos por 48 horas?", options: [{ text: "Control A.5.1 - Políticas generales.", correct: false, r: "Incorrecto. Este enmarca gobernanza documental." }, { text: "Control A.6.5 - Terminación o cambio de relación laboral.", correct: true, r: "Exige deshabilitación inmediata de accesos tras el cese." }, { text: "Control A.8.20 - Ciberseguridad de redes.", correct: false, r: "Incorrecto. Se enfoca en switches y firewalls." }] },
+        { q: "Para auditorías SUNAT, ¿tiempo mínimo de salvaguarda de registros CCTV en almacenes autorizados?", options: [{ text: "15 días calendario.", correct: false, r: "Insuficiente para investigaciones aduaneras." }, { text: "30 días calendario en formato digital.", correct: true, r: "Normativa aduanera exige un piso base de 30 días." }, { text: "6 meses completos.", correct: false, r: "Fallo. El estándar obligatorio base es 30 días." }] },
+        { q: "Inspección de 17 puntos: pernos del GenSet brillan como nuevos, chasis tiene óxido natural. ¿Acción?", options: [{ text: "Aprobar el contenedor.", correct: false, r: "Fallo. Asimetrías indican manipulación física." }, { text: "Rechazar unidad y levantar reporte por sospecha.", correct: true, r: "OEA busca detectar anomalías para prevenir dobles fondos." }, { text: "Colocar doble precinto ISO 17712.", correct: false, r: "Fallo. El sello no protege contra alteración estructural." }] },
+        { q: "Auditoría: todo el equipo comparte credenciales de un único usuario. ¿Principio e ISO vulnerada?", options: [{ text: "Control A.8.2 de ISO 27001, principio de No Repudio.", correct: true, r: "Se pierde la trazabilidad de quién modificó un dato crítico." }, { text: "Control A.5.15 de gestión de activos físicos.", correct: false, r: "Fallo. Este administra hardware, no accesos lógicos." }, { text: "Cláusula de control de contratistas externos.", correct: false, r: "Fallo. Aplica a personal externo, no autenticación interna." }] },
+        { q: "Estándar OEA v4 Asociados de Negocio: Plazo límite para notificar alerta positiva (OFAC/SBS).", options: [{ text: "Dentro de las 24 horas de la detección.", correct: true, r: "OEA v4 exige comunicación inmediata de 24 horas." }, { text: "Al cierre del ejercicio fiscal.", correct: false, r: "Fallo. Permitiría meses de operaciones de alto riesgo." }, { text: "A los 5 días hábiles del mes posterior.", correct: false, r: "Incorrecto. Riesgos delictivos exigen respuesta inmediata." }] },
+        { q: "Post-its con contraseñas pegados bajo el teclado. ¿Control ISO 27001 fallido?", options: [{ text: "Control A.7.4 - Seguridad física.", correct: false, r: "Este ve barreras físicas, no gestión de credenciales." }, { text: "Control A.8.5 - Autenticación segura.", correct: true, r: "Rompe las reglas de manejo estricto de contraseñas." }, { text: "Control A.8.24 - Criptografía en la nube.", correct: false, r: "Fallo. Criptografía ve algoritmos, no post-its." }] },
+        { q: "Inspección OEA transportistas locales (furgones): ¿Número de puntos críticos estructurales mínimos?", options: [{ text: "17 puntos de control físico.", correct: false, r: "Aplica para carga marítima internacional." }, { text: "7 puntos de inspección física.", correct: true, r: "SUNAT dictamina protocolo de 7 puntos para unidades locales." }, { text: "Únicamente 3 puntos focalizados.", correct: false, r: "Fallo. Abre flancos para ocultamiento ilícito." }] },
+        { q: "Home Office: ¿Mecanismo ISO 27001 para validar identidad en la nube?", options: [{ text: "Factor de Doble Autenticación (MFA) y VPN.", correct: true, r: "MFA asegura que solo el usuario verificado acceda." }, { text: "Modificar nombre de usuario cada 15 días.", correct: false, r: "Fallo. No frena ataques de fuerza bruta." }, { text: "Instalar antivirus comercial gratuito.", correct: false, r: "Fallo. No asegura validación de identidad." }] },
+        { q: "Lineamientos OEA: ¿Subcontratación del transporte?", options: [{ text: "Se permite subcontratación libre.", correct: false, r: "Fallo. Destruye trazabilidad de la cadena." }, { text: "Prohibición unilateral, requiere autorización previa escrita.", correct: true, r: "Para no romper trazabilidad OEA debe ser auditada y visada." }, { text: "Se delega responsabilidad vía declaración jurada.", correct: false, r: "Fallo. No exime a la empresa principal ante SUNAT." }] }
     ];
 
-    let currentIdx = 0;
-    let correctCount = 0;
-    let userName = "";
-    let userId = "";
+    let currentIdx = 0, correctCount = 0, uName = "", uId = "", uComp = "";
 
     function startEvaluation() {
-        userName = document.getElementById('p-name').value.trim();
-        userId = document.getElementById('p-dni').value.trim();
-
-        if (userName === "" || userId === "") {
-            alert("Por favor, ingrese sus datos completos antes de comenzar.");
-            return;
-        }
-
+        uName = document.getElementById('p-name').value.trim();
+        uId = document.getElementById('p-dni').value.trim();
+        uComp = document.getElementById('p-company').value.trim();
+        if (uName === "" || uId === "" || uComp === "") { alert("Por favor complete todos los datos."); return; }
         document.getElementById('scr-login').classList.remove('active');
         document.getElementById('scr-quiz').classList.add('active');
         loadQuestion();
     }
 
     function loadQuestion() {
-        if (currentIdx >= bank.length) {
-            showFinalResults();
-            return;
-        }
-
+        if (currentIdx >= bank.length) { showFinalResults(); return; }
         document.getElementById('quiz-progress').innerText = `PREGUNTA ${currentIdx + 1} DE ${bank.length}`;
         const qData = bank[currentIdx];
         document.getElementById('quiz-qtext').innerText = qData.q;
-
         const optionsZone = document.getElementById('quiz-options');
         optionsZone.innerHTML = "";
         document.getElementById('quiz-feedback').style.display = "none";
         document.getElementById('quiz-nextbtn').style.display = "none";
-
         qData.options.forEach(opt => {
             const btn = document.createElement('button');
             btn.className = "option-btn";
             btn.innerText = opt.text;
-            btn.onclick = () => evaluateAnswer(opt);
+            btn.onclick = () => {
+                document.querySelectorAll('.option-btn').forEach(b => b.disabled = true);
+                const fb = document.getElementById('quiz-feedback');
+                fb.style.display = "block";
+                if (opt.correct) { fb.className = "feedback correct"; fb.innerHTML = `✅ <b>¡CORRECTO!</b> ${opt.r}`; correctCount++; }
+                else { fb.className = "feedback wrong"; fb.innerHTML = `❌ <b>INCORRECTO.</b> ${opt.r}<br>La correcta era: ${qData.options.find(o=>o.correct).text}`; }
+                document.getElementById('quiz-nextbtn').style.display = "block";
+            };
             optionsZone.appendChild(btn);
         });
     }
 
-    function evaluateAnswer(option) {
-        const btns = document.querySelectorAll('.option-btn');
-        btns.forEach(b => b.disabled = true);
-
-        const fb = document.getElementById('quiz-feedback');
-        fb.style.display = "block";
-
-        if (option.correct) {
-            fb.className = "feedback correct";
-            fb.innerHTML = `<strong>¡CORRECTO! SUSTENTO TÉCNICO:</strong><br>${option.r}`;
-            correctCount++;
-        } else {
-            fb.className = "feedback wrong";
-            const correctOpt = bank[currentIdx].options.find(o => o.correct === true);
-            fb.innerHTML = `<strong>INCORRECTO. EXPLICACIÓN:</strong><br>${option.r}<br><br><strong>RESPUESTA CORRECTA:</strong> ${correctOpt.text}`;
-        }
-        document.getElementById('quiz-nextbtn').style.display = "block";
-    }
-
-    function nextQuestion() {
-        currentIdx++;
-        loadQuestion();
-    }
+    function nextQuestion() { currentIdx++; loadQuestion(); }
 
     function showFinalResults() {
         document.getElementById('scr-quiz').classList.remove('active');
         document.getElementById('scr-results').classList.add('active');
-
-        const finalScoreNum = Math.round((correctCount / bank.length) * 20);
-        const finalScoreStr = finalScoreNum < 10 ? `0${finalScoreNum}/20` : `${finalScoreNum}/20`;
-
-        if (finalScoreNum >= 14) {
+        const score = Math.round((correctCount / bank.length) * 20);
+        if (score >= 14) {
             document.getElementById('box-passed').style.display = "block";
-            document.getElementById('cert-fullname').innerText = userName.toUpperCase();
-            document.getElementById('cert-docid').innerText = `DOCUMENTO DE IDENTIDAD / CÉDULA DE EXTRANJERÍA: ${userId.toUpperCase()}`;
-            document.getElementById('cert-score').innerText = finalScoreStr;
-            
+            document.getElementById('cert-fullname').innerText = uName.toUpperCase();
+            document.getElementById('cert-docid').innerText = `DOCUMENTO DE IDENTIDAD: ${uId.toUpperCase()}`;
+            document.getElementById('cert-companyname').innerText = uComp.toUpperCase();
+            document.getElementById('cert-score').innerText = score + "/20";
             const today = new Date();
-            const dd = String(today.getDate()).padStart(2, '0');
-            const mm = String(today.getMonth() + 1).padStart(2, '0');
-            const yyyy = today.getFullYear();
-            document.getElementById('cert-date').innerText = `${dd}/${mm}/${yyyy}`;
-
-            const randomHex = Math.random().toString(36).substring(2, 8).toUpperCase();
-            document.getElementById('cert-unique-id').innerText = `ISOHUB-${yyyy}-${randomHex}`;
+            document.getElementById('cert-date').innerText = `${String(today.getDate()).padStart(2,'0')}/${String(today.getMonth()+1).padStart(2,'0')}/${today.getFullYear()}`;
+            document.getElementById('cert-unique-id').innerText = `ISOHUB-${today.getFullYear()}-${Math.random().toString(36).substring(2, 8).toUpperCase()}`;
         } else {
             document.getElementById('box-failed').style.display = "block";
-            document.getElementById('fail-score').innerText = finalScoreStr;
+            document.getElementById('fail-score').innerText = score + "/20";
         }
     }
 </script>
