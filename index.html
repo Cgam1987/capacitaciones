@@ -34,7 +34,7 @@
             text-transform: uppercase;
             letter-spacing: 0.5px;
             margin-top: 0;
-            border-bottom: 4px solid #ecc94b !important; /* Amarillo Corporativo */
+            border-bottom: 4px solid #ecc94b !important; 
             padding-bottom: 15px;
         }
         
@@ -54,7 +54,6 @@
             font-size: 17px; font-weight: bold; border-radius: 6px; cursor: pointer; text-transform: uppercase;
             box-shadow: 0 4px 12px rgba(30, 58, 138, 0.2);
         }
-        .btn-start:hover { background: #111827 !important; }
         
         /* AREA DE EVALUACIÓN */
         .progress-bar {
@@ -69,23 +68,23 @@
         }
         .option-btn:hover { background: #e2e8f0 !important; border-color: #1e3a8a !important; }
         
-        /* CUADROS DE RETROALIMENTACIÓN */
-        .feedback { padding: 15px; border-radius: 8px; margin-top: 20px; display: none; font-size: 15px; line-height: 1.5; }
+        .feedback { padding: 15px; border-radius: 6px; margin-top: 20px; display: none; font-size: 15px; line-height: 1.5; }
         .correct { background: #d1fae5 !important; border-left: 5px solid #10b981 !important; color: #065f46 !important; }
-        .wrong { background: #fee2e2 !important; border-left: 5px solid #ef4444 !important; color: #fca5a5 !important; }
+        .wrong { background: #fee2e2 !important; border-left: 5px solid #ef4444 !important; color: #991b1b !important; }
         
         .btn-next {
             display: none; background: #ecc94b !important; color: #1e3a8a !important; border: none; padding: 12px 30px;
             font-size: 15px; font-weight: bold; border-radius: 6px; cursor: pointer; margin: 20px 0 0 auto; text-transform: uppercase;
         }
+        .result-title { font-size: 22px; font-weight: bold; color: #10b981; text-align: center; margin-bottom: 20px; }
         
         /* ========================================================
-           DISEÑO DEL CERTIFICADO HORIZONTAL (ANTI-BORRADO)
+           DISEÑO REDISTRIBUIDO HORIZONTAL ABRUMADOR (TEXTOS GRANDES)
            ======================================================== */
         .cert-frame {
             background: #ffffff !important;
             color: #1e3a8a !important; 
-            padding: 45px 50px 35px 210px; 
+            padding: 40px 50px 35px 215px; 
             border: 2px solid #1e3a8a;
             border-radius: 4px;
             margin-top: 20px;
@@ -93,7 +92,7 @@
             box-shadow: 0 12px 35px rgba(30, 58, 138, 0.15);
             box-sizing: border-box;
             width: 100%;
-            min-height: 630px;
+            min-height: 640px;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
@@ -103,7 +102,7 @@
             content: '';
             position: absolute;
             top: 0; left: 0;
-            width: 160px; height: 100%;
+            width: 165px; height: 100%;
             background: linear-gradient(135deg, #1e3a8a 0%, #1e3a8a 78%, #ecc94b 78%, #ecc94b 83%, transparent 83%) !important;
             z-index: 1;
             -webkit-print-color-adjust: exact !important;
@@ -111,48 +110,60 @@
         }
         
         .cert-content { position: relative; z-index: 2; width: 100%; display: flex; flex-direction: column; justify-content: space-between; height: 100%; flex-grow: 1; }
-        .cert-header { text-align: center; margin-bottom: 10px; }
-        .cert-logo-box { max-width: 140px; margin: 0 auto 10px auto; }
+        
+        /* CABECERA CON TEXTOS GRANDES CENTRADOS */
+        .cert-header { text-align: center; margin-bottom: 5px; }
+        .cert-logo-box { max-width: 145px; margin: 0 auto 5px auto; }
         .cert-logo-box img { max-width: 100%; height: auto; }
         
-        .cert-title-main { font-family: 'Georgia', serif; font-size: 34px; font-weight: bold; color: #1e3a8a !important; margin: 0; text-align: center; }
-        .cert-subtitle-main { font-size: 14px; letter-spacing: 2px; color: #1e3a8a !important; margin-top: 4px; text-transform: uppercase; font-weight: bold; text-align: center; }
+        .cert-title-main { font-family: 'Georgia', serif; font-size: 38px; font-weight: bold; color: #1e3a8a !important; margin: 0; text-align: center; letter-spacing: 1px; }
+        .cert-subtitle-main { font-size: 15px; letter-spacing: 2px; color: #1e3a8a !important; margin-top: 4px; text-transform: uppercase; font-weight: bold; text-align: center; }
         
-        .cert-body { text-align: center; margin: 20px 0; }
-        .cert-recipient-label { font-size: 15px; font-style: italic; color: #475569; margin-bottom: 5px; }
-        .cert-recipient { font-family: 'Georgia', serif; font-size: 28px; font-weight: bold; color: #1e3a8a !important; border-bottom: 2px solid #1e3a8a; display: inline-block; padding: 0 25px; margin-bottom: 5px; text-transform: uppercase; }
-        .cert-doc { font-size: 13px; font-weight: bold; margin-bottom: 25px; color: #1e3a8a !important; text-transform: uppercase; }
+        /* BLOQUE NUEVO: METADATOS AL MEDIO SUPERIOR */
+        .cert-top-metadata {
+            text-align: center;
+            margin: 10px auto;
+            font-size: 13px;
+            color: #1e3a8a !important;
+            font-weight: bold;
+            letter-spacing: 0.5px;
+            line-height: 1.5;
+        }
         
-        .cert-text { font-size: 15px; line-height: 1.7; margin: 0 auto; max-width: 620px; color: #1e3a8a !important; text-align: center; }
-        .cert-location { font-size: 12px; margin-top: 15px; font-style: italic; color: #1e3a8a !important; }
+        /* CUERPO EXPANDIDO */
+        .cert-body { text-align: center; margin: 25px 0; }
+        .cert-recipient-label { font-size: 16px; font-style: italic; color: #475569; margin-bottom: 5px; }
+        .cert-recipient { font-family: 'Georgia', serif; font-size: 32px; font-weight: bold; color: #1e3a8a !important; border-bottom: 2px solid #1e3a8a; display: inline-block; padding: 0 30px; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.5px; }
+        .cert-doc { font-size: 14px; font-weight: bold; margin-bottom: 25px; color: #1e3a8a !important; text-transform: uppercase; }
         
-        /* TABLA DE COORDENADAS PARA PROTEGER CONTENIDOS INFERIORES EN EL PDF */
+        .cert-text { font-size: 17px; line-height: 1.8; margin: 0 auto; max-width: 650px; color: #1e3a8a !important; text-align: center; font-weight: 500; }
+        .cert-location { font-size: 13px; margin-top: 15px; font-style: italic; color: #1e3a8a !important; }
+        
+        /* BASE RIGIDA EN TABLA */
         .cert-footer-table { width: 100%; border-collapse: collapse; margin-top: auto; border-top: 1px solid #cbd5e1; }
         .cert-footer-table td { vertical-align: bottom; padding-top: 15px; color: #1e3a8a !important; }
         
-        .cert-f-left { width: 33%; text-align: left; font-size: 11px; font-family: monospace; font-weight: bold; }
-        .cert-f-center { width: 34%; text-align: center; }
+        .cert-f-left { width: 35%; text-align: left; font-size: 12px; font-family: monospace; font-weight: bold; }
         
-        .signature-area { display: inline-block; width: 180px; border-top: 1px solid #1e3a8a; padding-top: 5px; font-size: 11px; text-align: center; position: relative; }
-        .signature-image { position: absolute; bottom: 35px; left: 50%; transform: translateX(-50%); height: 55px; width: auto; }
-        
-        .cert-f-right { width: 33%; text-align: right; font-size: 11px; line-height: 1.5; font-weight: bold; }
-        .cert-f-right p { margin: 2px 0; }
+        /* CENTRO: FIRMA DIGITAL CON TUS DATOS INTEGRADOS */
+        .cert-f-center { width: 65%; text-align: center; }
+        .signature-area { display: inline-block; width: 280px; border-top: 1px solid #1e3a8a; padding-top: 6px; font-size: 12px; text-align: center; position: relative; color: #1e3a8a !important; font-weight: bold; }
+        .signature-image { position: absolute; bottom: 62px; left: 50%; transform: translateX(-50%); height: 60px; width: auto; }
         
         .btn-action { background: #10b981 !important; color: white !important; border: none; padding: 14px 28px; font-size: 16px; font-weight: bold; border-radius: 8px; cursor: pointer; text-transform: uppercase; width: 100%; margin-top: 25px; }
         .fail-box { text-align: center; padding: 30px; color: #1e3a8a; }
         
-        /* AJUSTES PARA PROCESADOR DE IMPRESIÓN */
+        /* AJUSTES IMPRESIÓN PDF */
         @media print {
             @page { size: A4 landscape; margin: 0; }
             html, body { background: #ffffff !important; color: #000000 !important; padding: 0 !important; margin: 0 !important; }
             .container { background: white !important; box-shadow: none !important; border: none !important; padding: 0 !important; max-width: 100% !important; width: 100% !important; }
             h1, .progress-bar, .fail-box, .btn-action, .result-title { display: none !important; }
             #box-passed { display: block !important; }
-            .cert-frame { display: flex !important; border: 2px solid #1e3a8a !important; padding: 40px 40px 30px 210px !important; margin: 0 !important; width: 297mm !important; height: 210mm !important; box-sizing: border-box !important; page-break-inside: avoid; background-color: #ffffff !important; -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+            .cert-frame { display: flex !important; border: 2px solid #1e3a8a !important; padding: 40px 40px 30px 215px !important; margin: 0 !important; width: 297mm !important; height: 210mm !important; box-sizing: border-box !important; page-break-inside: avoid; background-color: #ffffff !important; -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
             .cert-frame::before { content: '' !important; background: linear-gradient(135deg, #1e3a8a 0%, #1e3a8a 78%, #ecc94b 78%, #ecc94b 83%, transparent 83%) !important; -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
             .cert-footer-table td { color: #1e3a8a !important; display: table-cell !important; }
-            .cert-title-main, .cert-subtitle-main, .cert-recipient, .cert-doc, .cert-text, .cert-location { color: #1e3a8a !important; }
+            .cert-title-main, .cert-subtitle-main, .cert-recipient, .cert-doc, .cert-text, .cert-location, .cert-top-metadata { color: #1e3a8a !important; }
         }
     </style>
 </head>
@@ -197,6 +208,10 @@
                         <div class="cert-subtitle-main">Sistemas de Gestión Integrados Corporativos</div>
                     </div>
                     
+                    <div class="cert-top-metadata">
+                        Desarrollado por: ISO Hub Company &nbsp;|&nbsp; Duración: 2 horas &nbsp;|&nbsp; Calificación: <span id="cert-score">18/20</span> &nbsp;|&nbsp; Emitido el: <span id="cert-date">27/05/2026</span>
+                    </div>
+                    
                     <div class="cert-body">
                         <div class="cert-recipient-label">Se otorga el presente certificado a:</div>
                         <div class="cert-recipient" id="cert-fullname">CARLOS GAMARRA BENITES</div>
@@ -217,16 +232,9 @@
                             <td class="cert-f-center">
                                 <div class="signature-area">
                                     <img src="firma.png" class="signature-image" onerror="this.style.display='none'">
-                                    <p style="font-weight: bold; margin: 0; color:#1e3a8a;">Centro de Formación Virtual</p>
-                                    <p style="margin: 1px 0 0 0; color: #64748b; font-size: 10px;">ISO Hub Company</p>
+                                    <p style="margin: 0; font-size: 13px; color:#1e3a8a;">Ing. Carlos Gamarra Benites</p>
+                                    <p style="margin: 2px 0 0 0; color: #64748b; font-size: 11px; font-weight: 500;">Consultor ISO - ISO Hub Company<br>DNI n° 44783080 - CIP n° 234048</p>
                                 </div>
-                            </td>
-                            
-                            <td class="cert-f-right">
-                                <p style="margin:0;"><strong>Desarrollado por:</strong> ISO Hub Company</p>
-                                <p style="margin:0;"><strong>Duración:</strong> 2 horas</p>
-                                <p style="margin:0;"><strong>Calificación:</strong> <span id="cert-score">18/20</span></p>
-                                <p style="margin:0;"><strong>Emitido el:</strong> <span id="cert-date">27/05/2026</span></p>
                             </td>
                         </tr>
                     </table>
@@ -247,7 +255,6 @@
 </div>
 
 <script>
-    // BANCO DE PREGUNTAS TÉCNICAS
     const bank = [
         { 
             q: "Un conductor logístico reporta que sufrió un 'blackout' o pérdida de señal GPS de 35 minutos en una ruta no autorizada de la provincia. Según el estándar OEA v4 (SUNAT), ¿cuál es el protocolo obligatorio inmediato?", 
