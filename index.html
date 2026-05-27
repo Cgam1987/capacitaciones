@@ -3,12 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Evaluación y Certificación SGI</title>
+    <title>Evaluación y Certificación Oficial - ISO Hub</title>
     <style>
+        /* CONFIGURACIÓN BASE */
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background-color: #0f172a;
-            color: #f8fafc;
+            color: #f1f5f9;
             margin: 0;
             padding: 15px;
             display: flex;
@@ -17,7 +18,7 @@
             min-height: 100vh;
         }
         .container {
-            max-width: 750px;
+            max-width: 850px;
             width: 100%;
             background: #1e293b;
             padding: 25px;
@@ -38,161 +39,229 @@
         .screen { display: none; }
         .active { display: block; }
         
-        /* Login Screen */
-        .form-group {
-            margin-bottom: 15px;
-        }
-        label {
-            display: block;
-            margin-bottom: 5px;
-            font-size: 14px;
-            color: #94a3b8;
-            font-weight: bold;
-        }
-        input {
-            width: 100%;
-            padding: 12px;
-            background: #0f172a;
-            border: 1px solid #475569;
-            color: white;
-            border-radius: 6px;
-            font-size: 15px;
-            box-sizing: border-box;
-        }
-        .btn-start {
-            width: 100%;
-            background: #38bdf8;
-            color: #0f172a;
-            border: none;
-            padding: 14px;
-            font-size: 16px;
-            font-weight: bold;
-            border-radius: 6px;
-            cursor: pointer;
-            text-transform: uppercase;
-            margin-top: 10px;
-        }
+        /* FORMULARIO DE INGRESO */
+        .form-group { margin-bottom: 15px; }
+        label { display: block; margin-bottom: 5px; font-size: 14px; color: #94a3b8; font-weight: bold; }
+        input { width: 100%; padding: 12px; background: #0f172a; border: 1px solid #475569; color: white; border-radius: 6px; font-size: 15px; box-sizing: border-box; }
+        .btn-start { width: 100%; background: #2563eb; color: white; border: none; padding: 14px; font-size: 16px; font-weight: bold; border-radius: 6px; cursor: pointer; text-transform: uppercase; margin-top: 10px; }
         
-        /* Quiz Screen */
-        .progress-bar {
-            background: #0f172a;
-            padding: 6px 12px;
-            border-radius: 20px;
-            font-size: 12px;
-            font-weight: bold;
-            color: #38bdf8;
-            display: inline-block;
-            margin-bottom: 15px;
-        }
-        .question-text {
-            font-size: 17px;
-            font-weight: bold;
-            line-height: 1.4;
-            margin-bottom: 20px;
-        }
-        .option-btn {
-            display: block;
-            width: 100%;
-            background: #334155;
-            color: #f8fafc;
-            border: 1px solid #475569;
-            padding: 14px;
-            margin-bottom: 10px;
-            border-radius: 6px;
-            text-align: left;
-            font-size: 14.5px;
-            cursor: pointer;
-        }
+        /* AREA DE EVALUACIÓN */
+        .progress-bar { background: #0f172a; padding: 6px 12px; border-radius: 20px; font-size: 12px; font-weight: bold; color: #38bdf8; display: inline-block; margin-bottom: 15px; }
+        .question-text { font-size: 18px; font-weight: bold; line-height: 1.4; margin-bottom: 20px; }
+        .option-btn { display: block; width: 100%; background: #334155; color: #f8fafc; border: 1px solid #475569; padding: 14px; margin-bottom: 10px; border-radius: 6px; text-align: left; font-size: 15px; cursor: pointer; }
         .option-btn:hover { background: #475569; }
-        
-        .feedback {
-            padding: 12px;
-            border-radius: 6px;
-            margin-top: 15px;
-            display: none;
-            font-size: 14px;
-            line-height: 1.4;
-        }
+        .feedback { padding: 12px; border-radius: 6px; margin-top: 15px; display: none; font-size: 14px; line-height: 1.4; }
         .correct { background: #064e3b; border-left: 4px solid #10b981; color: #a7f3d0; }
         .wrong { background: #7f1d1d; border-left: 4px solid #ef4444; color: #fca5a5; }
-        
-        .btn-next {
-            display: none;
-            background: #2563eb;
-            color: white;
-            border: none;
-            padding: 10px 25px;
-            font-size: 14px;
-            font-weight: bold;
-            border-radius: 6px;
-            cursor: pointer;
-            margin: 15px 0 0 auto;
-        }
+        .btn-next { display: none; background: #2563eb; color: white; border: none; padding: 10px 25px; font-size: 14px; font-weight: bold; border-radius: 6px; cursor: pointer; margin: 15px 0 0 auto; }
 
-        /* Certificate Section */
-        .cert-container {
+        /* =================================================== */
+        /* MAQUETACIÓN EXACTA DEL CERTIFICADO MODELO ISO HUB  */
+        /* =================================================== */
+        .cert-frame {
             background: #ffffff;
             color: #1e293b;
-            padding: 30px;
-            border: 8px double #1e293b;
+            padding: 40px 50px;
             border-radius: 4px;
-            text-align: center;
             margin-top: 15px;
             position: relative;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+            box-sizing: border-box;
+            overflow: hidden; /* Corta las bandas que sobresalgan */
+            background-image: radial-gradient(#e2e8f0 1px, transparent 1px); /* Sutil textura de fondo */
+            background-size: 20px 20px;
         }
-        .cert-title {
-            font-family: 'Georgia', serif;
-            font-size: 24px;
-            font-weight: bold;
-            color: #0f172a;
-            margin-bottom: 5px;
+
+        /* DISEÑO DE LA BANDA TRICOLOR IZQUIERDA */
+        .cert-frame::before {
+            content: "";
+            position: absolute;
+            top: -100px;
+            left: -120px;
+            width: 140px;
+            height: 150%;
+            background: linear-gradient(90deg, #0f3460 0%, #164275 60%, #cca43b 60%, #cca43b 75%, transparent 75%);
+            transform: rotate(32deg);
+            z-index: 1;
         }
-        .cert-subtitle {
-            font-size: 11px;
+
+        /* MEDALLA DORADA DE CONSULTORÍA OFICIAL */
+        .cert-medal {
+            position: absolute;
+            top: 120px;
+            left: 35px;
+            width: 150px;
+            height: 150px;
+            background: radial-gradient(circle, #e5c060 0%, #b3861b 100%);
+            border-radius: 50%;
+            border: 6px double #ffffff;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+            z-index: 2;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            box-sizing: border-box;
+            padding: 10px;
+        }
+        .cert-medal::after {
+            content: "★ ★ ★ ★ ★";
+            position: absolute;
+            bottom: 15px;
+            font-size: 10px;
+            color: #ffffff;
             letter-spacing: 2px;
-            text-transform: uppercase;
-            color: #64748b;
-            margin-bottom: 25px;
-            border-bottom: 1px solid #e2e8f0;
-            padding-bottom: 10px;
         }
-        .cert-recipient {
-            font-family: 'Georgia', serif;
-            font-size: 22px;
+        .cert-medal-text {
+            color: #ffffff;
+            font-size: 10px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            line-height: 1.2;
+            border-bottom: 1px solid rgba(255,255,255,0.4);
+            border-top: 1px solid rgba(255,255,255,0.4);
+            padding: 6px 0;
+        }
+
+        /* CINTAS DE LA MEDALLA (COLAS DE LA CINTA DE LOGO) */
+        .cert-ribbon-left, .cert-ribbon-right {
+            position: absolute;
+            top: 230px;
+            width: 35px;
+            height: 90px;
+            background: linear-gradient(180deg, #b3861b 0%, #e5c060 100%);
+            z-index: 1;
+            clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 50% 80%, 0% 100%);
+        }
+        .cert-ribbon-left { left: 65px; transform: rotate(-5deg); }
+        .cert-ribbon-right { left: 110px; transform: rotate(5deg); }
+
+        /* ENCABEZADOS DEL CERTIFICADO */
+        .cert-header-container {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            margin-bottom: 25px;
+            position: relative;
+            z-index: 2;
+        }
+        .cert-main-title {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            font-size: 34px;
+            font-weight: 900;
+            color: #1e3a8a;
+            letter-spacing: 2px;
+            margin: 0;
+            text-align: right;
+            line-height: 1;
+        }
+        .cert-main-subtitle {
+            font-size: 16px;
+            letter-spacing: 5px;
+            color: #1e3a8a;
+            text-transform: uppercase;
+            text-align: right;
+            margin-top: 5px;
+            font-weight: bold;
+        }
+        .cert-logo-top {
+            position: absolute;
+            top: -15px;
+            right: 0;
+            max-width: 120px;
+            height: auto;
+        }
+
+        /* CONTENIDO DE TEXTOS DE CERTIFICACIÓN */
+        .cert-body-content {
+            margin-left: 170px; /* Desplaza el texto para no chocar con la medalla izquierda */
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+        .cert-intro-phrase { font-size: 14px; color: #475569; margin-bottom: 10px; }
+        
+        .cert-recipient-name {
+            font-family: Arial, sans-serif;
+            font-size: 26px;
+            font-weight: bold;
+            color: #000000;
+            margin: 10px 0;
+            display: inline-block;
+        }
+        .cert-identity-doc { font-size: 14px; color: #334155; margin-bottom: 20px; }
+        .cert-activity-clause { font-size: 14px; color: #475569; font-style: italic; margin-bottom: 5px; }
+        
+        .cert-legal-text {
+            font-size: 14px;
             font-weight: bold;
             color: #1e3a8a;
-            text-decoration: underline;
-            margin: 15px 0;
+            line-height: 1.5;
+            margin: 15px auto;
+            text-transform: uppercase;
         }
-        .cert-text {
-            font-size: 13px;
-            line-height: 1.6;
-            margin: 0 auto 30px auto;
-            max-width: 550px;
+        
+        /* DETALLES DE AUDITORÍA */
+        .cert-meta-details {
+            font-size: 12px;
             color: #334155;
+            line-height: 1.6;
+            margin: 20px 0;
         }
-        .cert-footer {
+
+        /* SECCIÓN DE FIRMA DIGITALIZADA */
+        .cert-signature-area {
             display: flex;
-            justify-content: space-around;
-            margin-top: 40px;
-            font-size: 11px;
-            color: #64748b;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 35px;
+            position: relative;
+            z-index: 2;
         }
-        .btn-print {
-            background: #10b981;
-            color: white;
-            border: none;
-            padding: 12px 25px;
-            font-size: 15px;
-            font-weight: bold;
-            border-radius: 6px;
-            cursor: pointer;
-            margin-top: 20px;
-            width: 100%;
+        /* La imagen de tu firma se posiciona de forma flotante aquí */
+        .cert-sig-image {
+            position: absolute;
+            top: -45px;
+            max-height: 65px;
+            width: auto;
+            z-index: 3;
         }
-        .fail-box {
+        .cert-sig-line {
+            width: 250px;
+            border-top: 1px dotted #334155;
+            margin-bottom: 5px;
+        }
+        .cert-sig-info {
+            font-size: 10px;
+            color: #475569;
             text-align: center;
-            padding: 20px;
+            line-height: 1.3;
+        }
+
+        /* CÓDIGO SERIAL CORRELATIVO ÚNICO */
+        .cert-serial-code {
+            position: absolute;
+            bottom: 15px;
+            left: 20px;
+            font-size: 10px;
+            color: #64748b;
+            font-family: monospace;
+            z-index: 2;
+        }
+
+        /* BOTONES DE ACCIÓN */
+        .btn-print { width: 100%; background: #10b981; color: white; border: none; padding: 14px; font-size: 16px; font-weight: bold; border-radius: 8px; cursor: pointer; text-transform: uppercase; margin-top: 20px; }
+        .fail-box { text-align: center; padding: 20px; }
+
+        /* MODIFICACIONES OPTIMIZADAS PARA IMPRESIÓN (PDF) */
+        @media print {
+            body { background: white !important; color: black !important; padding: 0 !important; }
+            .container, .progress-bar, h1, .btn-print, .fail-box, .screen { display: none !important; }
+            #box-passed, .cert-frame { display: block !important; box-shadow: none !important; padding: 40px 50px !important; margin: 0 !important; width: 100% !important; height: 100% !important; }
+            .cert-frame::before { background: linear-gradient(90deg, #0f3460 0%, #164275 60%, #cca43b 60%, #cca43b 75%, transparent 75%) !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            .cert-medal { background: radial-gradient(circle, #e5c060 0%, #b3861b 100%) !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            .cert-ribbon-left, .cert-ribbon-right { background: linear-gradient(180deg, #b3861b 0%, #e5c060 100%) !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
         }
     </style>
 </head>
@@ -201,76 +270,101 @@
 <div class="container">
     
     <div class="screen active" id="scr-login">
-        <h1>Sistemas de Gestión Control de Riesgos</h1>
-        <p style="text-align:center; color:#94a3b8; font-size:14px; margin-bottom:20px;">Evaluación Obligatoria de Competencias: OEA v4 & ISO 27001</p>
+        <h1>Centro de Formación e Instrucción SGI</h1>
         <div class="form-group">
-            <label>Nombres y Apellidos Completos:</label>
-            <input type="text" id="user-name" placeholder="Ej. Juan Pérez Castro">
+            <label>Nombres y Apellidos Completos del Participante:</label>
+            <input type="text" id="user-name" placeholder="Ej. Raúl Alarcon Flores">
         </div>
         <div class="form-group">
-            <label>Documento de Identidad (DNI / CE):</label>
-            <input type="text" id="user-id" placeholder="Ej. 45678912">
+            <label>Número de Cédula o Documento de Identidad:</label>
+            <input type="text" id="user-id" placeholder="Ej. 12882323-9">
         </div>
-        <button class="btn-start" onclick="startEvaluation()">Iniciar Evaluación ➔</button>
+        <button class="btn-start" onclick="startEvaluation()">Validar e Iniciar Evaluación ➔</button>
     </div>
 
     <div class="screen" id="scr-quiz">
         <div class="progress-bar" id="quiz-progress">PREGUNTA 1 DE 10</div>
-        <div class="question-text" id="quiz-qtext">Cargando reactivo operativo...</div>
+        <div class="question-text" id="quiz-qtext">Cargando reactivo...</div>
         <div id="quiz-options"></div>
         <div class="feedback" id="quiz-feedback"></div>
-        <button class="btn-next" id="quiz-nextbtn" onclick="nextQuestion()">Siguiente Pregunta ➔</button>
+        <button class="btn-next" id="quiz-nextbtn" onclick="nextQuestion()">Siguiente Reactivo ➔</button>
     </div>
 
     <div class="screen" id="scr-results">
         <div id="box-passed" style="display: none;">
-            <div class="cert-container" id="printable-certificate">
-                <div class="cert-title">CERTIFICADO DE APROBACIÓN</div>
-                <div class="cert-subtitle">Sistemas de Gestión Integrados Corporativos</div>
-                <p style="font-size: 13px; margin: 0; color: #64748b;">Otorgado con orgullo a:</p>
-                <div class="cert-recipient" id="cert-fullname">JUAN PÉREZ CASTRO</div>
-                <p style="font-size: 12px; margin: 0; color: #64748b;">Doc. Identidad: <span id="cert-docid">45678912</span></p>
+            <div class="cert-frame" id="printable-certificate">
                 
-                <div class="cert-text">
-                    Por haber completado y aprobado satisfactoriamente la evaluación de suficiencia técnica en los estándares de la <strong>Cadena Logística Internacional OEA Versión 4 (SUNAT)</strong> y los controles de <strong>Seguridad de la Información e Infraestructura Digital ISO 27001:2022</strong>.
+                <div class="cert-ribbon-left"></div>
+                <div class="cert-ribbon-right"></div>
+                
+                <div class="cert-medal">
+                    <div class="cert-medal-text">Consultoría,<br>Auditoría y<br>Capacitación<br>Profesional</div>
                 </div>
-                
-                <div class="cert-footer">
+
+                <img src="logo.png" class="cert-logo-top" alt="Logo" onerror="this.style.display='none';">
+
+                <div class="cert-header-container">
                     <div>
-                        <p style="margin:0; font-weight:bold; color:#0f172a;">Calificación: <span id="cert-score">18/20</span></p>
-                        <p style="margin:2px 0 0 0;">Evaluación Automatizada</p>
-                    </div>
-                    <div>
-                        <p style="margin:0; font-weight:bold; color:#0f172a;">Fecha de Emisión</p>
-                        <p style="margin:2px 0 0 0;" id="cert-date">27/05/2026</p>
+                        <div class="cert-main-title">CERTIFICADO</div>
+                        <div class="cert-main-subtitle">de capacitación</div>
                     </div>
                 </div>
+
+                <div class="cert-body-content">
+                    <div class="cert-intro-phrase">Se otorga el presente certificado a:</div>
+                    <div class="cert-recipient-name" id="cert-fullname">RAÚL ALARCON FLORES</div>
+                    <div class="cert-identity-doc">Identificado(a) con Cédula de Identidad n° <span id="cert-docid">12882323-9</span></div>
+                    
+                    <div class="cert-activity-clause">Por haber participado y aprobado la:</div>
+                    <div class="cert-legal-text" id="cert-custom-text">
+                        "CAPACITACION INTRODUCTORIA AL SISTEMA DE GESTIÓN DE CALIDAD BAJO LA NORMA ISO 9001:2015 Y AL SISTEMA DE GESTIÓN DE SEGURIDAD Y SALUD EN EL TRABAJO BAJO LA NORMA ISO 45001:2018"
+                    </div>
+                    
+                    <div class="cert-meta-details">
+                        Realizado en centro de formación de ISO Hub Company<br>
+                        Desarrollado el día <span id="cert-date-dev">27 de mayo de 2026</span><br>
+                        Duración: 3 horas<br>
+                        Emitido el <span id="cert-date-em">27 de mayo de 2026</span>
+                    </div>
+                </div>
+
+                <div class="cert-signature-area">
+                    <img src="firma.png" class="cert-sig-image" alt="Firma" onerror="this.style.display='none';">
+                    <div class="cert-sig-line"></div>
+                    <div class="cert-sig-info">
+                        <strong>Ing. Carlos Gamarra Benites</strong><br>
+                        Director de Operaciones - ISOHubCompany S.A.C<br>
+                        DNI n° 44783080 / CIP 234048<br>
+                        RUC n° 20606750138
+                    </div>
+                </div>
+
+                <div class="cert-serial-code" id="cert-serial">ISOHub-SGI-2026-0000</div>
             </div>
-            <button class="btn-print" onclick="window.print()">📥 Imprimir o Guardar en PDF</button>
+            <button class="btn-print" onclick="window.print()">📥 Guardar Certificado Oficial en PDF</button>
         </div>
 
         <div id="box-failed" class="fail-box" style="display: none;">
-            <h2 style="color: #ef4444; margin-top: 0;">Evaluación No Aprobada</h2>
-            <p style="font-size: 16px;">Tu puntuación fue de <span id="fail-score" style="font-weight:bold; color:#ef4444;">08/20</span>.</p>
-            <p style="color: #94a3b8; font-size: 14px; line-height: 1.5;">El puntaje mínimo requerido para la obtención del certificado digital es de 14/20 (7 respuestas correctas). Por favor, repasa los criterios operativos OEA e ISO 27001 y vuelve a intentarlo.</p>
-            <button class="btn-start" style="background:#475569; color:white;" onclick="window.location.reload()">Reintentar Prueba ⟳</button>
+            <h2 style="color: #ef4444; margin-top:0;">Evaluación No Completada</h2>
+            <p>Tu puntaje final no alcanzó el mínimo aprobatorio requerido (14/20).</p>
+            <button class="btn-start" style="background:#475569;" onclick="window.location.reload()">Reiniciar Intento ⟳</button>
         </div>
     </div>
-
 </div>
 
 <script>
+    // Banco de Preguntas con Retroalimentación Técnica
     const bank = [
-        { q: "Un conductor logístico reporta que sufrió un 'blackout' o pérdida de señal GPS de 35 minutos en una ruta no autorizada de la provincia. Según el estándar OEA v4 (SUNAT), ¿cuál es el protocolo obligatorio inmediato?", options: [{ text: "Esperar el arribo regular del contenedor al terminal de almacenamiento y asentar la observación en el acta de fin de mes.", correct: false, r: "Fallo de respuesta. Postergar la evaluación incrementa críticamente el riesgo de contaminación de carga." }, { text: "Ordenar la detención inmediata de la unidad en un punto seguro y ejecutar una reinspección física del precinto de botella antes de liberar el contenedor.", correct: true, r: "¡Excelente! OEA v4 exige detener preventivamente la cadena logística ante pérdidas críticas de trazabilidad satelital." }, { text: "Archivar la alerta si el chofer afirma por llamada de celular que la anomalía se debió únicamente a la geografía de la zona.", correct: false, r: "Fallo de respuesta. La normativa aduanera prohíbe basar la seguridad exclusivamente en declaraciones verbales." }] },
-        { q: "Bajo la norma internacional ISO 27001:2022, si un colaborador clave del área de comercio exterior cesa sus funciones en la empresa, ¿qué control específico del Anexo A se vulnera directamente si sus accesos a las nubes compartidas siguen activos por 48 horas?", options: [{ text: "Control A.5.1 - Políticas generales para la protección global de la información.", correct: false, r: "Incorrecto. Este requisito enmarca la gobernanza documental de la empresa, no ejecuciones de personal." }, { text: "Control A.6.5 - Terminación o cambio de relación laboral.", correct: true, r: "¡Es correcto! El control A.6.5 estipula la deshabilitación síncrona e inmediata de accesos físicos y digitales tras un despido o renuncia." }, { text: "Control A.8.20 - Marcos operativos de ciberseguridad aplicados a redes perimetrales.", correct: false, r: "Incorrecto. Se enfoca en la arquitectura técnica de switches y firewalls de red." }] },
-        { q: "Para cumplir satisfactoriamente con las auditorías de fiscalización aduanera de la SUNAT, ¿cuál es el tiempo mínimo mandatorio que deben salvaguardarse los registros videográficos (CCTV) en almacenes y terminales autorizados?", options: [{ text: "15 días calendario de almacenamiento continuo local de servidores.", correct: false, r: "Incorrecto. Es un marco de tiempo insuficiente para auditorías o investigaciones aduaneras posteriores." }, { text: "30 días calendario de almacenamiento continuo en un formato digital e inalterable.", correct: true, r: "¡Es correcto! El marco regulatorio aduanero peruano exige un piso base de 30 días calendario de retención continua de video." }, { text: "6 meses completos alineados al periodo de abandono aduanero legal.", correct: false, r: "Incorrecto. El estándar obligatorio base dictado para la retención de registros de CCTV comerciales es de 30 días." }] },
-        { q: "Durante una inspección técnica pre-operativa de los 17 puntos a un contenedor vacío, se observa que los pernos del GenSet (motor de frío) brillan como nuevos, mientras el chasis tiene óxido natural. ¿Qué acción corresponde?", options: [{ text: "Aprobar el contenedor ya que el cambio de pernos indica un correcto mantenimiento mecánico por parte del proveedor.", correct: false, r: "Fallo. Las asimetrías extremas de desgaste estructural son indicadores clásicos de manipulación o riesgo de preñado de drogas." }, { text: "Rechazar la unidad de transporte, paralizar el proceso de llenado y levantar un reporte de alerta por sospecha de alteración física.", correct: true, r: "¡Excelente! La inspección de los 17 puntos OEA busca detectar anomalías estructurales para prevenir dobles fondos." }, { text: "Colocar doble precinto de alta seguridad ISO 17712 en las barras de las compuertas para compensar la anomalía.", correct: false, r: "Incorrecto. El sello de las puertas no mitiga ni protege contra una alteración estructural en el bloque interno del motor." }] },
-        { q: "Un auditor interno detecta que para evitar sobrecostos en licencias de software de la empresa, todo el equipo de despacho comparte las credenciales de un único usuario administrador. ¿Qué principio e ISO se vulnera?", options: [{ text: "El control A.8.2 de ISO 27001, destruyendo el principio de No Repudio y la asignación individual de responsabilidades.", correct: true, r: "¡Perfecto! Al usar cuentas compartidas o genéricas se pierde por completo la trazabilidad de quién ejecutó o modificó un dato crítico." }, { text: "El control A.5.15 de gestión de activos de información física.", correct: false, r: "Incorrecto. El control A.5.15 administra el inventario de hardware y clasificación de la data, no las cuentas de acceso lógico." }, { text: "La cláusula de control operacional de contratistas externos.", correct: false, r: "Incorrecto. Aplica para personal externo subcontratado, no regula la autenticación técnica interna de los sistemas de información." }] },
-        { q: "El estándar de asociados de negocio de la OEA Versión 4 exige cruzar los datos de clientes y proveedores en bases de datos restrictivas (OFAC/SBS). ¿Cuál es el plazo límite para notificar una alerta positiva detectada?", options: [{ text: "Dentro de las 24 horas posteriores a la detección obligatoria del hallazgo.", correct: true, r: "¡Correcto! OEA v4 exige un flujo inmediato de comunicación de 24 horas ante alertas de lavado de activos o listas restrictivas." }, { text: "Al cierre del ejercicio fiscal contable de la empresa mediante el informe anual.", correct: false, r: "Fallo. Esperar al cierre anual permitiría operaciones comerciales continuas con entidades de altísimo riesgo legal." }, { text: "A los 5 días hábiles del mes posterior para calzar con la declaración aduanera.", correct: false, r: "Incorrecto. Los plazos de control de riesgos delictivos en comercio exterior exigen una respuesta inmediata de 24 horas." }] },
-        { q: "Al auditar las estaciones de trabajo de los operadores de balanza y control de accesos perimetrales, se encuentra que las contraseñas están escritas en post-its pegados debajo del teclado. ¿Qué control ISO 27001 está fallando?", options: [{ text: "Control A.7.4 - Seguridad física de los perímetros de la planta.", correct: false, r: "Incorrecto. El control A.7.4 evalúa barreras físicas como muros, rejas y esclusas de acceso, no políticas de escritorios limpios." }, { text: "Control A.8.5 - Autenticación segura y el manejo estricto de contraseñas confidenciales.", correct: true, r: "¡Correcto! Las contraseñas visibles anulan la efectividad de los accesos protegidos. Rompe las reglas de autenticación segura." }, { text: "Control A.8.24 - Uso adecuado de criptografía avanzada en la nube.", correct: false, r: "Incorrecto. La criptografía ve algoritmos de cifrado de bases de datos, no el comportamiento físico del usuario con sus post-its." }] },
-        { q: "En una inspección de seguridad OEA para transportistas locales, ¿cuál es el número de puntos críticos estructurales mínimos que se deben inspeccionar obligatoriamente a un furgón o camión de tracción?", options: [{ text: "El criterio estándar de los 17 puntos de control físico perimetral.", correct: false, r: "Incorrecto. Los 17 puntos aplican específicamente para contenedores de carga marítima internacional y unidades de arrastre cerradas." }, { text: "El criterio estandarizado de los 7 puntos de inspección física para camiones y furgones locales.", correct: true, r: "¡Es correcto! Para vehículos de transporte local (furgones/tractos), la SUNAT dictamina un protocolo específico de 7 puntos críticos." }, { text: "Únicamente 3 puntos focalizados: llantas, tanque de combustible y cabina de conducción.", correct: false, r: "Fallo. Dejar zonas estructurales sin revisar abre flancos para el transporte de elementos ilícitos en las rutas locales." }] },
-        { q: "Con la finalidad de garantizar la protección de datos frente a conexiones remotas (Home Office), ¿qué mecanismo tecnológico exige la ISO 27001 para validar la identidad de los coordinadores logísticos en la nube?", options: [{ text: "Uso mandatorio de Factor de Doble Autenticación (MFA) complementado con redes privadas cifradas (VPN).", correct: true, r: "¡Excelente! El MFA añade una capa informática robusta asegurando que solo el usuario verificado acceda a la data operativa corporativa." }, { text: "Modificar el nombre de usuario de las cuentas corporativas cada quince días calendario.", correct: false, r: "Incorrecto. Cambiar nombres de usuario de forma constante no frena un ataque cibernético de fuerza bruta si la contraseña es débil." }, { text: "Instalar únicamente software antivirus comercial gratuito en las computadoras personales de los empleados.", correct: false, r: "Fallo. El antivirus protege el sistema operativo de malware local, pero no asegura la validación de la identidad en canales en la nube." }] },
-        { q: "Bajo la ley de aduanas y los lineamientos del operador OEA, ¿qué estatus legal o condición contractual se exige de forma mandatoria respecto a la subcontratación del transporte en la cadena de distribución?", options: [{ text: "Se permite la subcontratación libre y unilateral para agilizar la fluidez del puerto.", correct: false, r: "Fallo de control. La subcontratación ciega destruye por completo el control de confiabilidad del personal y de la cadena de suministro." }, { text: "Existe una prohibición total de subcontratación unilateral, requiriendo autorización previa y expresa por escrito del mandante.", correct: true, r: "¡Es correcto! Para no romper la trazabilidad OEA, cualquier subcontratación debe ser auditada, visada y autorizada por escrito." }, { text: "Se delega la responsabilidad civil íntegra al conductor contratado mediante una declaración jurada simple.", correct: false, r: "Incorrecto. Las declaraciones juradas no eximen a la empresa principal de las responsabilidades aduaneras ni de la debida diligencia." }] }
+        { q: "Un conductor logístico reporta que sufrió un 'blackout' o pérdida de señal GPS de 35 minutos en una ruta no autorizada de la provincia. Según el estándar OEA v4 (SUNAT), ¿cuál es el protocolo obligatorio inmediato?", options: [{ text: "Esperar el arribo regular del contenedor al terminal de almacenamiento y asentar la observación en el acta de fin de mes.", correct: false, r: "Incorrecto. Postergar la evaluación incrementa críticamente el riesgo de contaminación de carga." }, { text: "Ordenar la detención inmediata de la unidad en un punto seguro y ejecutar una reinspección física del precinto de botella antes de liberar el contenedor.", correct: true, r: "¡Excelente! OEA v4 exige detener preventivamente la cadena logística ante pérdidas críticas de trazabilidad satelital." }, { text: "Archivar la alerta si el chofer afirma por llamada de celular que la anomalía se debió únicamente a la geografía de la zona.", correct: false, r: "Incorrecto. La normativa aduanera prohíbe basar la seguridad exclusivamente en declaraciones verbales." }] },
+        { q: "Bajo la norma internacional ISO 27001:2022, si un colaborador clave del área de comercio exterior cesa sus funciones en la empresa, ¿qué control específico del Anexo A se vulnera directamente si sus accesos a las nubes compartidas siguen activos por 48 horas?", options: [{ text: "Control A.5.1 - Políticas generales para la protección global de la información corporativa.", correct: false, r: "Incorrecto. Este requisito enmarca la gobernanza de políticas de la empresa, no ejecuciones de personal." }, { text: "Control A.6.5 - Terminación o cambio de relación laboral.", correct: true, r: "¡Es correcto! El control A.6.5 estipula la deshabilitación síncrona e inmediata de accesos físicos y digitales tras un despido o renuncia." }, { text: "Control A.8.20 - Marcos operativos de ciberseguridad aplicados a redes perimetrales.", correct: false, r: "Incorrecto. Se enfoca en la arquitectura técnica de switches y firewalls de red." }] },
+        { q: "Para cumplir satisfactoriamente con las auditorías de fiscalización aduanera de la SUNAT, ¿cuál es el tiempo mínimo mandatorio que deben salvaguardarse los registros videográficos (CCTV) en almacenes y terminales autorizados?", options: [{ text: "15 días calendario de almacenamiento continuo local de servidores.", correct: false, r: "Incorrecto. Es un marco de tiempo insuficiente para investigaciones aduaneras posteriores." }, { text: "30 días calendario de almacenamiento continuo en un formato digital e inalterable.", correct: true, r: "¡Es correcto! El marco regulatorio aduanero peruano exige un piso base de 30 días calendario de retención continua de video." }, { text: "6 meses completos alineados al periodo de abandono aduanero legal de mercancías.", correct: false, r: "Incorrecto. El estándar obligatorio base dictado para la retención de registros de CCTV es de 30 días." }] },
+        { q: "Durante una inspección técnica pre-operativa de los 17 puntos a un contenedor vacío antes del llenado, se observa que los pernos del GenSet (motor de frío) brillan como nuevos, mientras el chasis tiene óxido natural. ¿Qué acción corresponde?", options: [{ text: "Aprobar el contenedor ya que el cambio de pernos indica un correcto mantenimiento mecánico.", correct: false, r: "Incorrecto. Las asimetrías extremas de desgaste estructural son indicadores de manipulación física o riesgo de preñado." }, { text: "Rechazar la unidad de transporte, paralizar el proceso de llenado y levantar un reporte de alerta por sospecha de alteración física.", correct: true, r: "¡Excelente! La inspección de los 17 puntos OEA busca detectar anomalías estructurales para prevenir dobles fondos." }, { text: "Colocar doble precinto de alta seguridad ISO 17712 en las barras de las compuertas para compensar la anomalía.", correct: false, r: "Incorrecto. El sello de las puertas no mitiga una alteración estructural en el bloque interno del motor." }] },
+        { q: "Un auditor interno detecta que para evitar sobrecostos en licencias de software corporativo, todo el equipo de despacho comparte las credenciales de un único usuario administrador. ¿Qué principio e ISO se vulnera?", options: [{ text: "El control A.8.2 de ISO 27001, destruyendo el principio de No Repudio y la asignación individual de responsabilidades.", correct: true, r: "¡Perfecto! Al usar cuentas compartidas se pierde la trazabilidad de quién ejecutó o modificó un dato crítico." }, { text: "El control A.5.15 de gestión de activos de información física corporativa.", correct: false, r: "Incorrecto. El control A.5.15 administra el inventario de hardware, no las cuentas de acceso lógico." }, { text: "La cláusula de control operacional de contratistas externos y subcontratación.", correct: false, r: "Incorrecto. Aplica para personal externo contratado, no regula la autenticación técnica interna." }] },
+        { q: "El estándar de asociados de negocio de la OEA Versión 4 exige cruzar los datos de clientes y proveedores en bases de datos restrictivas (OFAC/SBS). ¿Cuál es el plazo límite para notificar una alerta positiva detectada?", options: [{ text: "Dentro de las 24 horas posteriores a la detección obligatoria del hallazgo.", correct: true, r: "¡Correcto! OEA v4 exige un flujo inmediato de comunicación de 24 horas ante alertas de lavado de activos." }, { text: "Al cierre del ejercicio fiscal contable de la empresa mediante el informe anual de control.", correct: false, r: "Incorrecto. Esperar al cierre anual permitiría operaciones comerciales continuas con entidades de riesgo legal." }, { text: "A los 5 días hábiles del mes posterior para calzar con la declaración aduanera de SUNAT.", correct: false, r: "Incorrecto. Los plazos de riesgos en comercio exterior exigen una respuesta inmediata de 24 horas." }] },
+        { q: "Al auditar las estaciones de trabajo de los operadores de balanza y control de accesos perimetrales, se encuentra que las contraseñas están escritas en post-its pegados debajo del teclado. ¿Qué control ISO 27001 está fallando?", options: [{ text: "Control A.7.4 - Seguridad física de los perímetros de la planta operativa.", correct: false, r: "Incorrecto. El control A.7.4 evalúa barreras físicas como muros o rejas, no políticas de escritorios limpios." }, { text: "Control A.8.5 - Autenticación segura y el manejo estricto de contraseñas confidenciales.", correct: true, r: "¡Correcto! Las contraseñas visibles anulan la efectividad de los accesos protegidos corporativos." }, { text: "Control A.8.24 - Uso adecuado de criptografía avanzada en bases de datos de la nube.", correct: false, r: "Incorrecto. La criptografía ve algoritmos de cifrado de bases de datos, no el comportamiento físico del usuario." }] },
+        { q: "En una inspección de seguridad OEA para transportistas locales de furgones cerrados, ¿cuál es el número de puntos críticos estructurales mínimos que se deben inspeccionar obligatoriamente?", options: [{ text: "El criterio estándar de los 17 puntos de control físico perimetral.", correct: false, r: "Incorrecto. Los 17 puntos aplican para contenedores de carga marítima internacional cerrada." }, { text: "El criterio estandarizado de los 7 puntos de inspección física para camiones furgones locales cerrados.", correct: true, r: "¡Es correcto! Para vehículos de transporte local, la SUNAT dictamina un protocolo específico de 7 puntos críticos." }, { text: "Únicamente 3 puntos focalizados técnicos: llantas, tanque de combustible y cabina de conducción.", correct: false, r: "Incorrecto. Dejar zonas estructurales sin revisar abre flancos para el transporte de contrabando." }] },
+        { q: "Con la finalidad de garantizar la protección de datos frente a conexiones remotas (Home Office), ¿qué mecanismo tecnológico exige la ISO 27001 para validar la identidad técnica de los coordinadores logísticos en la nube?", options: [{ text: "Uso mandatorio de Factor de Doble Autenticación (MFA) complementado con redes privadas cifradas (VPN corporativa).", correct: true, r: "¡Excelente! El MFA añade una capa informática robusta asegurando que solo el usuario verificado acceda a la data." }, { text: "Modificar el nombre de usuario de las cuentas corporativas cada quince días calendario.", correct: false, r: "Incorrecto. Cambiar nombres de usuario de forma constante no frena un ataque cibernético." }, { text: "Instalar únicamente software antivirus comercial gratuito en las computadoras personales.", correct: false, r: "Incorrecto. El antivirus protege el sistema operativo de malware local, pero no asegura la validación de identidad." }] },
+        { q: "Bajo la ley de aduanas y los lineamientos del operador OEA, ¿qué estatus legal o condición contractual se exige de forma mandatoria respecto a la subcontratación del transporte en la cadena de distribución?", options: [{ text: "Se permite la subcontratación libre y unilateral para agilizar la fluidez del puerto.", correct: false, r: "Incorrecto. La subcontratación ciega destruye el control de confiabilidad del personal OEA." }, { text: "Existe una prohibición total de subcontratación unilateral, requiriendo autorización previa y expresa por escrito del mandante.", correct: true, r: "¡Es correcto! Para no romper la trazabilidad OEA, cualquier subcontratación debe ser auditada y autorizada por escrito." }, { text: "Se delega la responsabilidad civil íntegra al conductor contratado mediante una declaración jurada simple.", correct: false, r: "Incorrecto. Las declaraciones juradas no eximen a la empresa principal de las responsabilidades aduaneras." }] }
     ];
 
     let currentIdx = 0;
@@ -283,7 +377,7 @@
         userId = document.getElementById('user-id').value.trim();
 
         if (userName === "" || userId === "") {
-            alert("Por favor, ingrese sus nombres y documento de identidad antes de comenzar.");
+            alert("Por favor, ingrese los datos requeridos para iniciar la validación de suficiencia técnica.");
             return;
         }
 
@@ -325,11 +419,12 @@
 
         if (option.correct) {
             fb.className = "feedback correct";
-            fb.innerHTML = `<strong>¡CORRECTO!</strong><br>${option.r}`;
+            fb.innerHTML = `<strong>¡RESPUESTA CORRECTA! SUSTENTO:</strong><br>${option.r}`;
             correctCount++;
         } else {
             fb.className = "feedback wrong";
-            fb.innerHTML = `<strong>INCORRECTO</strong><br>${option.r}`;
+            const correctOpt = bank[currentIdx].options.find(o => o.correct === true);
+            fb.innerHTML = `<strong>RESPUESTA INCORRECTA. EXPLICACIÓN DE AUDITORÍA:</strong><br>${option.r}<br><br><strong>LA OPCIÓN CORRECTA ERA:</strong> ${correctOpt.text}`;
         }
         document.getElementById('quiz-nextbtn').style.display = "block";
     }
@@ -343,28 +438,30 @@
         document.getElementById('scr-quiz').classList.remove('active');
         document.getElementById('scr-results').classList.add('active');
 
-        const finalScoreNum = Math.round((correctCount / bank.length) * 20);
-        const finalScoreStr = finalScoreNum < 10 ? `0${finalScoreNum}/20` : `${finalScoreNum}/20`;
+        const score20 = Math.round((correctCount / bank.length) * 20);
+        const finalScoreStr = score20 < 10 ? `0${score20}/20` : `${score20}/20`;
 
-        // Nota aprobatoria base: 14 o más de 20 (7 de 10 correctas)
-        if (finalScoreNum >= 14) {
+        if (score20 >= 14) {
             document.getElementById('box-passed').style.display = "block";
             document.getElementById('cert-fullname').innerText = userName.toUpperCase();
             document.getElementById('cert-docid').innerText = userId;
             document.getElementById('cert-score').innerText = finalScoreStr;
             
-            // Colocar fecha de hoy de forma automática
+            // Fecha Automatizada Dinámica Española
             const today = new Date();
-            const dd = String(today.getDate()).padStart(2, '0');
-            const mm = String(today.getMonth() + 1).padStart(2, '0');
-            const yyyy = today.getFullYear();
-            document.getElementById('cert-date').innerText = `${dd}/${mm}/${yyyy}`;
+            const months = ["enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre"];
+            const dateStr = `${today.getDate()} de ${months[today.getMonth()]} de ${today.getFullYear()}`;
+            document.getElementById('cert-date-dev').innerText = dateStr;
+            document.getElementById('cert-date-em').innerText = dateStr;
+
+            // Generación de Código Correlativo Único Audituable
+            // Limpia caracteres del ID para crear el serial único
+            const cleanId = userId.replace(/[^0-9]/g, "");
+            document.getElementById('cert-serial').innerText = `ISOHub-SGI-${today.getFullYear()}-${cleanId || '0001'}`;
         } else {
             document.getElementById('box-failed').style.display = "block";
-            document.getElementById('fail-score').innerText = finalScoreStr;
         }
     }
 </script>
-
 </body>
 </html>
