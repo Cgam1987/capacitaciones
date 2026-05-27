@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafío Grupal SGI: OEA v4 e ISO 27001</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #1a202c;
+            color: #e2e8f0;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .container {
+            max-width: 800px;
+            width: 100%;
+            background: #2d3748;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+        }
+        h1 {
+            text-align: center;
+            color: #63b3ed;
+            margin-top: 0;
+            text-transform: uppercase;
+            font-size: 24px;
+            border-bottom: 2px solid #4a5568;
+            padding-bottom: 15px;
+        }
+        .scoreboard {
+            display: flex;
+            justify-content: space-around;
+            background: #1a202c;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+            border: 1px solid #4a5568;
+        }
+        .team-score {
+            text-align: center;
+        }
+        .team-name {
+            font-weight: bold;
+            color: #cbd5e0;
+            font-size: 16px;
+        }
+        .score-val {
+            font-size: 28px;
+            font-weight: bold;
+            color: #48bb78;
+            margin-top: 5px;
+        }
+        .active-team {
+            color: #ecc94b !important;
+            text-shadow: 0 0 10px rgba(236,201,75,0.5);
+        }
+        .turn-indicator {
+            text-align: center;
+            background: #4a5568;
+            padding: 8px;
+            border-radius: 5px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+        .question-box {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: #fff;
+            line-height: 1.5;
+        }
+        .option-btn {
+            display: block;
+            width: 100%;
+            background: #4a5568;
+            color: #fff;
+            border: none;
+            padding: 15px;
+            margin-bottom: 12px;
+            border-radius: 6px;
+            text-align: left;
+            font-size: 15px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .option-btn:hover {
+            background: #718096;
+        }
+        .feedback {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 6px;
+            display: none;
+            font-size: 15px;
+            line-height: 1.4;
+        }
+        .feedback.correct {
+            background: #22543d;
+            border-left: 5px solid #48bb78;
+            color: #c6f6d5;
+        }
+        .feedback.wrong {
+            background: #742a2a;
+            border-left: 5px solid #f56565;
+            color: #fed7d7;
+        }
+        .next-btn {
+            display: none;
+            margin: 20px auto 0 auto;
+            background: #3182ce;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 6px;
+            cursor: pointer;
+            text-transform: uppercase;
+        }
+        .next-btn:hover {
+            background: #2b6cb0;
+        }
+        .end-screen {
+            display: none;
+            text-align: center;
+            padding: 40px 20px;
+        }
+        .end-screen h2 {
+            color: #ecc94b;
+            font-size: 28px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>🏆 Desafío Grupal de Auditoría e Inspección</h1>
+    
+    <div class="scoreboard" id="scoreboard">
+        <div class="team-score">
+            <div id="name-t1" class="team-name active-team">EQUIPO ROJO 🔴</div>
+            <div id="score-t1" class="score-val">0</div>
+        </div>
+        <div class="team-score">
+            <div id="name-t2" class="team-name">EQUIPO AZUL 🔵</div>
+            <div id="score-t2" class="score-val">0</div>
+        </div>
+    </div>
+
+    <div id="game-zone">
+        <div class="turn-indicator" id="turn-txt">TURNO DEL: EQUIPO ROJO</div>
+        <div class="question-box" id="q-text">Cargando pregunta...</div>
+        <div id="options-zone"></div>
+        <div class="feedback" id="feedback-box"></div>
+        <button class="next-btn" id="next-button" onclick="nextQuestion()">Siguiente Turno ➔</button>
+    </div>
+
+    <div class="end-screen" id="end-zone">
+        <h2>¡Fin del Juego de Competencia!</h2>
+        <p style="font-size: 18px; margin: 20px 0;">Resultados Finales:</p>
+        <div id="final-results" style="font-size: 20px; font-weight: bold; line-height: 2;"></div>
+        <button class="next-btn" style="display:inline-block; margin-top:30px;" onclick="window.location.reload()">Jugar de Nuevo ⟳</button>
+    </div>
+</div>
+
+<script>
+    const questions = [
+        {
+            q: "Un transportista terrestre sufre un 'apagón' de señal GPS (Blackout) de 35 minutos en una ruta no autorizada. Según el estándar OEA v4, ¿cuál es la acción inmediata exigida al equipo?",
+            options: [
+                { text: "Reportar el incidente en la liquidación del flete al cierre del mes.", correct: false, r: "Incorrecto. Esperar a fin de mes vulnera el principio de respuesta ante riesgos de contaminación." },
+                { text: "Alertar de inmediato, ordenar detener la marcha en zona segura y suspender la entrega hasta verificar el precinto.", correct: true, r: "¡Correcto! El OEA exige detener el flujo logístico ante sospechas de pérdida de trazabilidad en ruta." },
+                { text: "Ignorar la alerta si el chofer comunica telefónicamente que fue un problema de cobertura.", correct: false, r: "Incorrecto. La aduana exige un protocolo documentado y verificación física, no solo la palabra del conductor." }
+            ]
+        },
+        {
+            q: "Bajo la norma ISO 27001:2022, si un empleado clave es cesado y sus credenciales de SharePoint continúan activas por falta de comunicación, ¿qué control se está incumpliendo?",
+            options: [
+                { text: "Control A.5.1 - Políticas para la seguridad de la información.", correct: false, r: "Incorrecto. Este control establece las directrices documentales generales, no la baja específica del personal." },
+                { text: "Control A.8.20 - Seguridad en redes corporativas.", correct: false, r: "Incorrecto. Seguridad en redes ve configuraciones de infraestructura, no el ciclo de vida laboral de los usuarios." },
+                { text: "Control A.6.5 - Terminación o cambio de relación laboral.", correct: true, r: "¡Correcto! Exige de forma explícita que las credenciales físicas y lógicas se eliminen o suspendan inmediatamente al terminar el contrato." }
+            ]
+        },
+        {
+            q: "Para cumplir con las auditorías de SUNAT (OEA) en un depósito temporal o almacén aduanero en el Perú, ¿cuál es el tiempo mínimo obligatorio de retención del CCTV?",
+            options: [
+                { text: "15 días calendario de almacenamiento continuo de servidores.", correct: false, r: "Incorrecto. Es un tiempo muy corto para garantizar la trazabilidad de despachos internacionales marítimos." },
+                { text: "30 días calendario de almacenamiento continuo en formato inalterable.", correct: true, r: "¡Correcto! La normativa aduanera exige un piso mínimo mensual de 30 días de grabaciones guardadas para fiscalizaciones posteriores." },
+                { text: "6 meses continuos, por empatar con el plazo legal de abandono de mercancías.", correct: false, r: "Incorrecto. Aunque la carga pase meses guardada, el estándar obligatorio de video base es de 30 días." }
+            ]
+        },
+        {
+            q: "Durante la inspección de un contenedor vacío antes de cargar, se detecta que los pernos exteriores del motor de refrigeración (GenSet) lucen nuevos mientras el resto tiene óxido. ¿Qué acción exige el protocolo aduanero?",
+            options: [
+                { text: "Aprobar la unidad puesto que los pernos nuevos garantizan un mejor ajuste mecánico.", correct: false, r: "Incorrecto. Pernos con un desgaste drásticamente diferente al resto de la estructura es un indicador clásico de manipulación para crear dobles fondos." },
+                { text: "Rechazar el contenedor, detener el carguío y reportar a seguridad por sospecha de alteración estructural.", correct: true, r: "¡Correcto! El OEA y las inspecciones de los 17 puntos mandan inmovilizar unidades ante asimetrías sospechosas." },
+                { text: "Permitir el viaje pero colocar doble precinto de botella en la puerta principal como compensación.", correct: false, r: "Incorrecto. El precinto de la puerta no mitiga una posible alteración o compartimento oculto en la zona del motor." }
+            ]
+        },
+        {
+            q: "Un auditor del SGSI descubre que para ahorrar costos operativos en licencias, cinco analistas de operaciones comparten la contraseña de la misma cuenta de administrador de la nube. ¿Qué control del Anexo A se está vulnerando directamente?",
+            options: [
+                { text: "Control A.8.2 - Privilegios de acceso e identificación única.", correct: true, r: "¡Correcto! La norma prohíbe las cuentas genéricas o compartidas porque destruyen el principio de No Repudio (trazabilidad de quién hizo qué)." },
+                { text: "Control A.5.15 - Control de activos de información.", correct: false, r: "Incorrecto. El inventario de activos clasifica la información, pero no regula las credenciales humanas de acceso." },
+                { text: "Control A.7.4 - Seguridad física perimetral.", correct: false, r: "Incorrecto. Regula barreras mecánicas y puertas físicas, no credenciales ni software en la nube." }
+            ]
+        },
+        {
+            q: "El estándar de asociados de negocio de la OEA exige cruzar la información de clientes y proveedores en listas restrictivas de prevención de lavado de activos. ¿Cuál es el plazo máximo obligatorio para reportar una alerta positiva interna?",
+            options: [
+                { text: "Dentro de los 5 días hábiles del mes siguiente.", correct: false, r: "Incorrecto. En seguridad de la cadena logística, un retraso de días permite el flujo de capitales o mercancías ilícitas." },
+                { text: "Dentro de las 24 horas posteriores a la detección del hallazgo.", correct: true, r: "¡Correcto! El OEA v4 establece un marco de reporte inmediato de 24 horas para blindar la operación y mitigar riesgos legales." },
+                { text: "Al momento de renovar el contrato anual con el socio estratégico.", correct: false, r: "Incorrecto. Las revisiones de riesgos son continuas y los reportes ante anomalías críticas deben ser inmediatos." }
+            ]
+        }
+    ];
+
+    let currentQ = 0;
+    let scores = [0, 0]; 
+    let activeTeam = 0; 
+
+    function updateScoreboard() {
+        document.getElementById('score-t1').innerText = scores[0];
+        document.getElementById('score-t2').innerText = scores[1];
+        
+        if(activeTeam === 0) {
+            document.getElementById('name-t1').classList.add('active-team');
+            document.getElementById('name-t2').classList.remove('active-team');
+            document.getElementById('turn-txt').innerText = "TURNO DEL: EQUIPO ROJO 🔴";
+            document.getElementById('turn-txt').style.background = "#742a2a";
+        } else {
+            document.getElementById('name-t2').classList.add('active-team');
+            document.getElementById('name-t1').classList.remove('active-team');
+            document.getElementById('turn-txt').innerText = "TURNO DEL: EQUIPO AZUL 🔵";
+            document.getElementById('turn-txt').style.background = "#2a4365";
+        }
+    }
+
+    function loadQuestion() {
+        if(currentQ >= questions.length) {
+            endGame();
+            return;
+        }
+        
+        updateScoreboard();
+        const qData = questions[currentQ];
+        document.getElementById('q-text').innerText = (currentQ + 1) + ". " + qData.q;
+        
+        const optionsZone = document.getElementById('options-zone');
+        optionsZone.innerHTML = "";
+        document.getElementById('feedback-box').style.display = "none";
+        document.getElementById('next-button').style.display = "none";
+
+        qData.options.forEach((opt) => {
+            const btn = document.createElement('button');
+            btn.className = "option-btn";
+            btn.innerText = opt.text;
+            btn.onclick = () => checkAnswer(opt, btn);
+            optionsZone.appendChild(btn);
+        });
+    }
+
+    function checkAnswer(option, clickedBtn) {
+        const buttons = document.querySelectorAll('.option-btn');
+        buttons.forEach(b => b.disabled = true);
+
+        const feedback = document.getElementById('feedback-box');
+        feedback.style.display = "block";
+
+        if(option.correct) {
+            feedback.className = "feedback correct";
+            scores[activeTeam] += 100; 
+            feedback.innerHTML = "<strong>¡RESPUESTA CORRECTA! (+100 Pts)</strong><br>" + option.r;
+        } else {
+            feedback.className = "feedback wrong";
+            feedback.innerHTML = "<strong>RESPUESTA INCORRECTA (0 Pts)</strong><br>" + option.r;
+        }
+
+        updateScoreboard();
+        document.getElementById('next-button').style.display = "block";
+    }
+
+    function nextQuestion() {
+        currentQ++;
+        activeTeam = activeTeam === 0 ? 1 : 0;
+        loadQuestion();
+    }
+
+    function endGame() {
+        document.getElementById('game-zone').style.display = "none";
+        document.getElementById('scoreboard').style.display = "none";
+        document.getElementById('end-zone').style.display = "block";
+
+        let resultText = `🔴 EQUIPO ROJO: ${scores[0]} Puntos<br>🔵 EQUIPO AZUL: ${scores[1]} Puntos<br><br>`;
+        if(scores[0] === scores[1]) {
+            resultText += "¡EMPATE TÉCNICO EN LA AUDITORÍA! 🤝";
+        } else if(scores[0] > scores[1]) {
+            resultText += "👑 ¡EL EQUIPO ROJO ES EL GANADOR! 👑";
+        } else {
+            resultText += "👑 ¡EL EQUIPO AZUL ES EL GANADOR! 👑";
+        }
+        document.getElementById('final-results').innerHTML = resultText;
+    }
+
+    loadQuestion();
+</script>
+</body>
+</html>
