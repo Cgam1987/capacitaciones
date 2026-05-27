@@ -18,7 +18,7 @@
             min-height: 100vh;
         }
         .container {
-            max-width: 850px;
+            max-width: 950px;
             width: 100%;
             background: #1e293b; 
             padding: 30px;
@@ -27,7 +27,6 @@
             border: 1px solid #334155;
             box-sizing: border-box;
         }
-        
         h1 {
             text-align: center;
             color: #38bdf8; 
@@ -38,11 +37,8 @@
             border-bottom: 2px solid #334155;
             padding-bottom: 15px;
         }
-        
         .screen { display: none; }
         .active { display: block; }
-        
-        /* PANTALLA REGISTRO */
         .form-group { margin-bottom: 18px; }
         label { display: block; margin-bottom: 6px; font-size: 15px; color: #94a3b8; font-weight: bold; }
         input {
@@ -53,8 +49,6 @@
             width: 100%; background: #38bdf8; color: #0f172a; border: none; padding: 16px;
             font-size: 17px; font-weight: bold; border-radius: 8px; cursor: pointer; text-transform: uppercase;
         }
-        
-        /* PANTALLA JUEGO (QUIZ) */
         .progress-bar {
             background: #0f172a; padding: 8px 15px; border-radius: 20px;
             font-size: 13px; font-weight: bold; color: #38bdf8; display: inline-block; margin-bottom: 20px;
@@ -65,81 +59,150 @@
             padding: 16px; margin-bottom: 12px; border-radius: 8px; text-align: left; font-size: 15.5px; cursor: pointer;
         }
         .option-btn:hover { background: #475569; }
-        
-        /* RETROALIMENTACIÓN TÉCNICA REQUERIDA */
         .feedback { padding: 15px; border-radius: 8px; margin-top: 20px; display: none; font-size: 15px; line-height: 1.5; }
         .correct { background: #064e3b; border-left: 5px solid #10b981; color: #a7f3d0; }
         .wrong { background: #7f1d1d; border-left: 5px solid #ef4444; color: #fca5a5; }
-        
         .btn-next {
             display: none; background: #2563eb; color: white; border: none; padding: 12px 30px;
             font-size: 15px; font-weight: bold; border-radius: 8px; cursor: pointer; margin: 20px 0 0 auto; text-transform: uppercase;
         }
-
-        /* PANTALLA DE RESULTADOS */
-        .result-title { font-size: 24px; font-weight: bold; color: #ecc94b; text-align: center; margin-bottom: 15px; }
+        .result-title { font-size: 22px; font-weight: bold; color: #ecc94b; text-align: center; margin-bottom: 20px; }
         
-        /* EL CERTIFICADO REFINADO (FONDO BLANCO, TEXTOS AZULES #1E3A8A) */
+        /* ========================================================
+           DISEÑO PREMIUM HORIZONTAL ORIGINAL (ESTILO ISO HUB)
+           ======================================================== */
         .cert-frame {
             background: #ffffff;
-            color: #1e3a8a; /* Todo el texto en azul corporativo solicitado */
-            padding: 40px 40px 40px 180px; /* Margen izquierdo amplio para que no tape la franja */
+            color: #1e3a8a; 
+            padding: 45px 50px 35px 210px; /* Margen para dar espacio a la franja lateral */
             border: 2px solid #1e3a8a;
             border-radius: 4px;
-            text-align: center;
             margin-top: 20px;
             position: relative;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            box-shadow: 0 12px 35px rgba(0,0,0,0.4);
             box-sizing: border-box;
-            overflow: hidden;
+            width: 100%;
+            min-height: 620px; /* Altura perfecta proporcional para formato apaisado/horizontal */
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
         
-        /* FRANJA DIAGONAL IZQUIERDA AL OTRO LADO (INSPIRADO EN TU DISEÑO) */
+        /* LA FRANJA DIAGONAL IZQUIERDA EXACTA DEL MODELO */
         .cert-frame::before {
             content: '';
             position: absolute;
             top: 0; left: 0;
-            width: 140px; height: 100%;
-            background: linear-gradient(135deg, #1e3a8a 0%, #1e3a8a 70%, #ecc94b 70%, #ecc94b 75%, transparent 75%);
+            width: 160px; height: 100%;
+            background: linear-gradient(135deg, #1e3a8a 0%, #1e3a8a 78%, #ecc94b 78%, #ecc94b 83%, transparent 83%);
             z-index: 1;
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
         }
         
-        .cert-content { position: relative; z-index: 2; width: 100%; }
+        .cert-content { 
+            position: relative; 
+            z-index: 2; 
+            width: 100%; 
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100%;
+            flex-grow: 1;
+        }
         
-        .cert-logo-box { max-width: 140px; margin: 0 auto 15px auto; text-align: center; }
+        .cert-header { text-align: center; margin-bottom: 15px; }
+        .cert-logo-box { max-width: 140px; margin: 0 auto 10px auto; }
         .cert-logo-box img { max-width: 100%; height: auto; }
         .logo-placeholder { font-size: 11px; color: #94a3b8; font-style: italic; }
         
-        .cert-title-main { font-family: 'Georgia', serif; font-size: 32px; font-weight: bold; color: #1e3a8a; margin: 5px 0; text-align: center; }
-        .cert-subtitle-main { font-size: 15px; letter-spacing: 2px; color: #1e3a8a; margin-bottom: 25px; text-transform: uppercase; font-weight: bold; text-align: center; }
+        .cert-title-main { font-family: 'Georgia', serif; font-size: 34px; font-weight: bold; color: #1e3a8a; margin: 0; text-align: center; letter-spacing: 1px; }
+        .cert-subtitle-main { font-size: 14px; letter-spacing: 2px; color: #1e3a8a; margin-top: 4px; text-transform: uppercase; font-weight: bold; text-align: center; }
         
-        .cert-recipient-label { font-size: 15px; font-style: italic; margin: 15px 0 5px 0; color: #475569; }
-        .cert-recipient { font-family: 'Georgia', serif; font-size: 28px; font-weight: bold; color: #1e3a8a; border-bottom: 2px solid #1e3a8a; display: inline-block; padding: 0 30px; margin-bottom: 5px; }
-        .cert-doc { font-size: 14px; font-weight: bold; margin-bottom: 25px; color: #1e3a8a; }
+        .cert-body { text-align: center; margin: 20px 0; }
+        .cert-recipient-label { font-size: 15px; font-style: italic; color: #475569; margin-bottom: 5px; }
+        .cert-recipient { font-family: 'Georgia', serif; font-size: 28px; font-weight: bold; color: #1e3a8a; border-bottom: 2px solid #1e3a8a; display: inline-block; padding: 0 25px; margin-bottom: 5px; text-transform: uppercase; }
+        .cert-doc { font-size: 13px; font-weight: bold; margin-bottom: 25px; color: #1e3a8a; text-transform: uppercase; }
         
-        .cert-text { font-size: 15px; line-height: 1.7; margin: 0 auto 25px auto; max-width: 580px; color: #1e3a8a; text-align: center; }
+        .cert-text { font-size: 15px; line-height: 1.7; margin: 0 auto; max-width: 620px; color: #1e3a8a; text-align: center; }
+        .cert-location { font-size: 12px; margin-top: 15px; font-style: italic; color: #1e3a8a; }
         
-        .cert-metadata { display: flex; justify-content: space-between; margin-top: 30px; font-size: 13px; text-align: left; border-top: 1px dashed #cbd5e1; padding-top: 15px; }
+        /* DISTRIBUCIÓN INFERIOR REQUERIDA (NÚMERO IZQUIERDA - METADATOS DERECHA) */
+        .cert-footer-layout {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-top: auto;
+            border-top: 1px solid #cbd5e1;
+            padding-top: 15px;
+        }
         
-        .cert-signatures-container { display: flex; justify-content: center; margin-top: 35px; }
-        .cert-signature-box { border-top: 1px solid #1e3a8a; padding-top: 8px; width: 220px; text-align: center; font-size: 12px; }
+        .cert-footer-left { text-align: left; font-size: 11px; font-family: monospace; color: #1e3a8a; font-weight: bold; }
         
-        .cert-id-tag { position: absolute; bottom: 12px; right: 20px; font-size: 11px; font-family: monospace; color: #64748b; }
+        .cert-footer-center { text-align: center; display: flex; flex-direction: column; align-items: center; }
+        .cert-signature-box { border-top: 1px solid #1e3a8a; padding-top: 5px; width: 190px; text-align: center; font-size: 11px; color: #1e3a8a; }
+        
+        .cert-footer-right { text-align: right; font-size: 12px; color: #1e3a8a; line-height: 1.5; }
+        .cert-footer-right p { margin: 2px 0; }
         
         .btn-action {
             background: #10b981; color: white; border: none; padding: 14px 28px; font-size: 16px;
-            font-weight: bold; border-radius: 8px; cursor: pointer; text-transform: uppercase; width: 100%; margin-top: 20px;
+            font-weight: bold; border-radius: 8px; cursor: pointer; text-transform: uppercase; width: 100%; margin-top: 25px;
         }
         .btn-action:hover { background: #059669; }
         .fail-box { text-align: center; padding: 30px; }
         
-        /* CONFIGURACIÓN DE IMPRESIÓN LIMPIA PARA EL PDF */
+        /* ========================================================
+           REGLAS DE IMPRESIÓN FORZADAS EN HORIZONTAL (NIVEL EXPERTO)
+           ======================================================== */
         @media print {
-            body { background: white !important; color: black !important; padding: 0 !important; }
-            .container { background: white !important; box-shadow: none !important; border: none !important; padding: 0 !important; max-width: 100% !important;}
-            h1, .progress-bar, .fail-box, .btn-action, .result-title, p { display: none !important; }
+            @page {
+                size: A4 landscape; /* FUERZA EL FORMATO HORIZONTAL AL EXPORTAR */
+                margin: 0; 
+            }
+            html, body {
+                background: #ffffff !important;
+                color: #000000 !important;
+                padding: 0 !important;
+                margin: 0 !important;
+            }
+            .container { 
+                background: white !important; 
+                box-shadow: none !important; 
+                border: none !important; 
+                padding: 0 !important; 
+                max-width: 100% !important;
+                width: 100% !important;
+            }
+            /* Ocultar elementos de la web */
+            h1, .progress-bar, .fail-box, .btn-action, .result-title { 
+                display: none !important; 
+            }
             #box-passed { display: block !important; }
-            .cert-frame { display: block !important; border: 2px solid #1e3a8a !important; padding: 50px 50px 50px 190px !important; margin: 0 !important; width: 100% !important; height: auto !important; }
+            
+            /* Ajustar el marco horizontal sin parches blancos */
+            .cert-frame { 
+                display: flex !important; 
+                border: 2px solid #1e3a8a !important; 
+                padding: 50px 50px 40px 220px !important; 
+                margin: 0 !important; 
+                width: 297mm !important;  /* Medidas exactas de una hoja A4 horizontal */
+                height: 210mm !important; 
+                box-sizing: border-box !important;
+                page-break-inside: avoid;
+                background-color: #ffffff !important;
+                -webkit-print-color-adjust: exact !important; /* OBLIGA A IMPRIMIR LOS COLORES DE FONDO */
+                print-color-adjust: exact !important;
+            }
+            .cert-frame::before {
+                content: '' !important;
+                background: linear-gradient(135deg, #1e3a8a 0%, #1e3a8a 78%, #ecc94b 78%, #ecc94b 83%, transparent 83%) !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+            .cert-footer-left { color: #1e3a8a !important; }
+            .cert-footer-right { color: #1e3a8a !important; }
+            .cert-text { color: #1e3a8a !important; }
         }
     </style>
 </head>
@@ -152,11 +215,11 @@
         <p style="text-align:center; color:#94a3b8; font-size:15px; margin-bottom:25px;">Evaluación Obligatoria de Competencias: OEA v4 & ISO 27001</p>
         <div class="form-group">
             <label>Nombres y Apellidos Completos:</label>
-            <input type="text" id="user-name" placeholder="Ej. Juan Carlos Pérez Castro">
+            <input type="text" id="user-name" placeholder="Ej. Carlos Gamarra Benites">
         </div>
         <div class="form-group">
             <label>Documento de Identidad / Cédula de Extranjería:</label>
-            <input type="text" id="user-id" placeholder="Ej. DNI 45678912 o CE 0012345">
+            <input type="text" id="user-id" placeholder="Ej. DNI 44783080 o CE 0012345">
         </div>
         <button class="btn-start" onclick="startEvaluation()">Iniciar Evaluación ➔</button>
     </div>
@@ -170,50 +233,54 @@
     </div>
 
     <div class="screen" id="scr-results">
-        
         <div id="box-passed" style="display: none;">
             <p class="result-title">🥇 ¡EVALUACIÓN APROBADA EXITOSAMENTE! 🥇</p>
             
             <div class="cert-frame" id="printable-certificate">
                 <div class="cert-content">
                     
-                    <div class="cert-logo-box">
-                        <img src="logo.png" alt="Logo Empresa" onerror="this.onerror=null; this.parentElement.innerHTML='<span class=\'logo-placeholder\'>[ logo.png ]</span>';">
+                    <div class="cert-header">
+                        <div class="cert-logo-box">
+                            <img src="logo.png" alt="Logo Empresa" onerror="this.onerror=null; this.parentElement.innerHTML='<span class=\'logo-placeholder\'>[ logo.png ]</span>';">
+                        </div>
+                        <div class="cert-title-main">CERTIFICADO DE APROBACIÓN</div>
+                        <div class="cert-subtitle-main">Sistemas de Gestión Integrados Corporativos</div>
                     </div>
                     
-                    <div class="cert-title-main">CERTIFICADO DE APROBACIÓN</div>
-                    <div class="cert-subtitle-main">Sistemas de Gestión Integrados Corporativos</div>
-                    
-                    <div class="cert-recipient-label">Se otorga el presente certificado a:</div>
-                    <div class="cert-recipient" id="cert-fullname">JUAN CARLOS PÉREZ CASTRO</div>
-                    <div class="cert-doc" id="cert-docid">DNI / CÉDULA DE EXTRANJERÍA: 45678912</div>
-                    
-                    <div class="cert-text">
-                        Por haber completado y aprobado satisfactoriamente la evaluación de suficiencia técnica en el <strong>Taller Operativo de la Cadena Logística Internacional Segura OEA Versión 4 (SUNAT) y los controles de Seguridad de la Información e Infraestructura Digital ISO 27001:2022</strong>.
+                    <div class="cert-body">
+                        <div class="cert-recipient-label">Se otorga el presente certificado a:</div>
+                        <div class="cert-recipient" id="cert-fullname">CARLOS GAMARRA BENITES</div>
+                        <div class="cert-doc" id="cert-docid">DOCUMENTO DE IDENTIDAD / CÉDULA DE EXTRANJERÍA: 44783080</div>
+                        
+                        <div class="cert-text">
+                            Por haber completado y aprobado satisfactoriamente la evaluación de suficiencia técnica en el <strong>Taller Operativo de la Cadena Logística Internacional Segura OEA Versión 4 (SUNAT) y los controles de Seguridad de la Información e Infraestructura Digital ISO 27001:2022</strong>.
+                        </div>
+                        <div class="cert-location">Realizado en el centro de formación virtual de ISO Hub Company</div>
                     </div>
                     
-                    <p style="font-size: 12px; margin: 0 0 15px 0; font-style: italic;">Realizado en el centro de formación virtual de ISO Hub Company</p>
-                    
-                    <div class="cert-metadata">
-                        <div>
+                    <div class="cert-footer-layout">
+                        
+                        <div class="cert-footer-left">
+                            Certificado N°: <span id="cert-unique-id">ISOHUB-2026-XXXXXX</span>
+                        </div>
+                        
+                        <div class="cert-footer-center">
+                            <div class="cert-signature-box">
+                                <img src="firma.png" style="height: 55px; margin-bottom: 2px;" onerror="this.style.display='none'">
+                                <p style="font-weight: bold; margin: 0;">Centro de Formación Virtual</p>
+                                <p style="margin: 2px 0 0 0; color: #64748b; font-size: 10px;">ISO Hub Company</p>
+                            </div>
+                        </div>
+                        
+                        <div class="cert-footer-right">
                             <p><strong>Desarrollado por:</strong> ISO Hub Company</p>
                             <p><strong>Duración:</strong> 2 horas</p>
-                        </div>
-                        <div>
                             <p><strong>Calificación:</strong> <span id="cert-score">18/20</span></p>
                             <p><strong>Emitido el:</strong> <span id="cert-date">27/05/2026</span></p>
                         </div>
+                        
                     </div>
                     
-                    <div class="cert-signatures-container">
-                        <div class="cert-signature-box">
-                            <img src="firma.png" style="height: 55px; margin-bottom: 2px;" onerror="this.style.display='none'">
-                            <p style="font-weight: bold; margin: 0;">Centro de Formación Virtual</p>
-                            <p style="margin: 2px 0 0 0; color: #64748b; font-size: 11px;">ISO Hub Company</p>
-                        </div>
-                    </div>
-
-                    <div class="cert-id-tag">Certificado N°: <span id="cert-unique-id">ISOHUB-0000-XXXX</span></div>
                 </div>
             </div>
             
@@ -227,16 +294,14 @@
             <button class="btn-start" style="background:#475569; color:white; margin-top:20px;" onclick="window.location.reload()">Reintentar Evaluación ⟳</button>
         </div>
     </div>
-
 </div>
 
 <script>
-    // BANCO DE PREGUNTAS CON RETROALIMENTACIÓN COMPLETA
     const bank = [
         { 
             q: "Un conductor logístico reporta que sufrió un 'blackout' o pérdida de señal GPS de 35 minutos en una ruta no autorizada de la provincia. Según el estándar OEA v4 (SUNAT), ¿cuál es el protocolo obligatorio inmediato?", 
             options: [
-                { text: "Esperar el arribo regular del contenedor al terminal de almacenamiento y asentar la observación en el acta de fin de mes.", correct: false, r: "Postergar la verificación incrementa críticamente el riesgo de contaminación de carga en zonas desprotegidas." }, 
+                { text: "Esperar el arribo regular del contenedor al terminal de almacenamiento y asentar la observación en el acta de fin de mes.", correct: false, r: "Postergar la verificación de la unidad incrementa críticamente el riesgo de contaminación de carga en zonas desprotegidas." }, 
                 { text: "Ordenar la detención inmediata de la unidad en un punto seguro y ejecutar una reinspección física del precinto de botella antes de liberar el contenedor.", correct: true, r: "El estándar OEA v4 exige detener preventivamente la cadena logística ante pérdidas críticas de trazabilidad satelital." }, 
                 { text: "Archivar la alerta si el chofer afirma por llamada de celular que la anomalía se debió únicamente a la geografía de la zona.", correct: false, r: "La normativa aduanera prohíbe basar el control de seguridad exclusivamente en declaraciones verbales del chofer." }
             ] 
@@ -260,7 +325,7 @@
         { 
             q: "Durante una inspección técnica pre-operativa de los 17 puntos a un contenedor vacío antes del llenado, se observa que los pernos del GenSet (motor de frío) brillan como nuevos, mientras el chasis tiene óxido natural. ¿Qué acción corresponde?", 
             options: [
-                { text: "Aprobar el contenedor ya que el cambio de pernos indica un correcto mantenimiento mecánico por parte del proveedor.", correct: false, r: "Las asimetrías extremas de desgaste estructural son indicadores clásicos de manipulación física o riesgo de preñado de drogas." }, 
+                { text: "Aprobar el contenedor ya que el cambio de pernos indica un correcto mantenimiento mecánico por parte del proveedor.", correct: false, r: "Las asimetrías extremas de desgaste estructural son indicadores clásicos de manipulación física o riesgo de dobles fondos." }, 
                 { text: "Rechazar la unidad de transporte, paralizar el proceso de llenado y levantar un reporte de alerta por sospecha de alteración física.", correct: true, r: "La inspección de los 17 puntos OEA busca detectar anomalías estructurales sutiles para prevenir dobles fondos." }, 
                 { text: "Colocar doble precinto de alta seguridad ISO 17712 en las barras de las compuertas para compensar la anomalía.", correct: false, r: "El sello de las puertas no mitiga ni protege contra una alteración estructural en el bloque interno del motor." }
             ] 
@@ -308,7 +373,7 @@
         { 
             q: "Bajo la ley de aduanas y los lineamientos del operador OEA, ¿qué estatus legal o condición contractual se exige de forma mandatoria respecto a la subcontratación unilateral del transporte logístico en la cadena de distribución?", 
             options: [
-                { text: "Se permite la subcontratación libre y unilateral para agilizar la fluidez del puerto operativo.", correct: false, r: "La subcontratación ciega destruye por completo el control de confiabilidad del personal y de la cadena de suministro internacional OEA." }, 
+                { text: "Se permite la subcontratación libre y unilateral para agilizar la fluidez del puerto operativo.", correct: false, r: "La subcontratación ciega destruye por completo el control de confiabilidad y de la cadena de suministro internacional OEA." }, 
                 { text: "Existe una prohibición total de subcontratación unilateral, requiriendo autorización previa y expresa por escrito del mandante corporativo.", correct: true, r: "Para no romper la trazabilidad técnica OEA, cualquier subcontratación operativa debe ser auditada, visada y autorizada por escrito formalmente." }, 
                 { text: "Se delega la responsabilidad civil íntegra al conductor contratado mediante una declaración jurada simple de cumplimiento aduanero.", correct: false, r: "Las declaraciones juradas técnicas no eximen a la empresa principal de las responsabilidades aduaneras ni de la debida diligencia." }
             ] 
@@ -395,14 +460,12 @@
             document.getElementById('cert-docid').innerText = `DOCUMENTO DE IDENTIDAD / CÉDULA DE EXTRANJERÍA: ${userId.toUpperCase()}`;
             document.getElementById('cert-score').innerText = finalScoreStr;
             
-            // Fecha Automatizada
             const today = new Date();
             const dd = String(today.getDate()).padStart(2, '0');
             const mm = String(today.getMonth() + 1).padStart(2, '0');
             const yyyy = today.getFullYear();
             document.getElementById('cert-date').innerText = `${dd}/${mm}/${yyyy}`;
 
-            // Código Alfanumérico Único por Participante
             const randomHex = Math.random().toString(36).substring(2, 8).toUpperCase();
             document.getElementById('cert-unique-id').innerText = `ISOHUB-${yyyy}-${randomHex}`;
         } else {
@@ -413,4 +476,4 @@
 </script>
 
 </body>
-</html>
+</html>   
