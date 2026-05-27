@@ -65,20 +65,19 @@
         .btn-next { display: none; background: #ecc94b !important; color: #1e3a8a; border: none; padding: 12px 30px; font-size: 15px; font-weight: bold; border-radius: 6px; cursor: pointer; margin: 20px 0 0 auto; text-transform: uppercase; }
 
         /* ========================================================
-           DISEÑO FINAL REDISTRIBUIDO HORIZONTAL A4
+           DISEÑO FINAL COMPACTO PARA EVITAR SEGUNDA HOJA EN PDF
            ======================================================== */
         .cert-frame {
             background: #ffffff !important;
             color: #1e3a8a !important; 
-            padding: 40px 50px 30px 220px; 
+            padding: 35px 45px 25px 210px; 
             border: 2px solid #1e3a8a;
             border-radius: 4px;
-            margin-top: 15px;
+            margin-top: 10px;
             position: relative;
             box-shadow: 0 12px 35px rgba(30, 58, 138, 0.15);
             box-sizing: border-box;
             width: 100%;
-            min-height: 650px;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
@@ -88,7 +87,7 @@
             content: '';
             position: absolute;
             top: 0; left: 0;
-            width: 170px; height: 100%;
+            width: 165px; height: 100%;
             background: linear-gradient(135deg, #1e3a8a 0%, #1e3a8a 82%, #ecc94b 82%, #ecc94b 85%, transparent 85%) !important;
             z-index: 1;
             -webkit-print-color-adjust: exact !important;
@@ -98,49 +97,63 @@
         .cert-content { position: relative; z-index: 2; width: 100%; display: flex; flex-direction: column; justify-content: space-between; height: 100%; flex-grow: 1; }
         
         .cert-header { text-align: center; margin-bottom: 5px; }
-        .cert-logo-box { max-width: 150px; margin: 0 auto 5px auto; }
+        .cert-logo-box { max-width: 140px; margin: 0 auto 5px auto; }
         .cert-logo-box img { max-width: 100%; height: auto; }
         
-        .cert-title-main { font-family: 'Georgia', serif; font-size: 40px; font-weight: bold; color: #1e3a8a !important; margin: 0; }
-        .cert-subtitle-main { font-size: 16px; letter-spacing: 2px; color: #1e3a8a !important; margin-top: 5px; text-transform: uppercase; font-weight: bold; }
+        .cert-title-main { font-family: 'Georgia', serif; font-size: 38px; font-weight: bold; color: #1e3a8a !important; margin: 0; }
+        .cert-subtitle-main { font-size: 15px; letter-spacing: 2px; color: #1e3a8a !important; margin-top: 3px; text-transform: uppercase; font-weight: bold; }
         
-        .cert-body { text-align: center; margin: 20px 0; }
-        .cert-recipient-label { font-size: 17px; font-style: italic; color: #475569; margin-bottom: 5px; }
-        .cert-recipient { font-family: 'Georgia', serif; font-size: 36px; font-weight: bold; color: #1e3a8a !important; border-bottom: 2px solid #1e3a8a; display: inline-block; padding: 0 40px; margin-bottom: 8px; text-transform: uppercase; }
-        .cert-doc { font-size: 14px; font-weight: bold; margin-bottom: 15px; color: #1e3a8a !important; }
-        .cert-company { font-size: 18px; font-weight: bold; color: #1e3a8a !important; margin-bottom: 25px; text-transform: uppercase; }
+        .cert-body { text-align: center; margin: 15px 0; }
+        .cert-recipient-label { font-size: 16px; font-style: italic; color: #475569; margin-bottom: 5px; }
+        .cert-recipient { font-family: 'Georgia', serif; font-size: 34px; font-weight: bold; color: #1e3a8a !important; border-bottom: 2px solid #1e3a8a; display: inline-block; padding: 0 35px; margin-bottom: 6px; text-transform: uppercase; }
+        .cert-doc { font-size: 13px; font-weight: bold; margin-bottom: 12px; color: #1e3a8a !important; }
+        .cert-company { font-size: 17px; font-weight: bold; color: #1e3a8a !important; margin-bottom: 20px; text-transform: uppercase; }
 
-        .cert-text { font-size: 17px; line-height: 1.6; margin: 0 auto; max-width: 700px; color: #1e3a8a !important; text-align: center; }
-        .cert-location { font-size: 13px; margin-top: 10px; font-style: italic; font-weight: 500; }
+        .cert-text { font-size: 16px; line-height: 1.6; margin: 0 auto; max-width: 700px; color: #1e3a8a !important; text-align: center; }
+        .cert-location { font-size: 13px; margin-top: 15px; font-style: italic; font-weight: bold; color: #1e3a8a !important; }
 
         /* BASE DIVISORIA Y FIRMA ARRIBA */
         .cert-signature-container {
             text-align: center;
-            margin-top: 30px;
+            margin-top: 20px;
             position: relative;
         }
         .signature-block {
             display: inline-block;
             position: relative;
-            padding-bottom: 10px;
+            padding-bottom: 5px;
         }
-        .signature-img { height: 75px; width: auto; margin-bottom: -15px; position: relative; z-index: 3; }
-        .signature-data { font-size: 13px; line-height: 1.4; color: #1e3a8a !important; font-weight: bold; }
+        .signature-img { height: 70px; width: auto; margin-bottom: -12px; position: relative; z-index: 3; }
+        .signature-data { font-size: 12px; line-height: 1.4; color: #1e3a8a !important; font-weight: bold; }
 
         .cert-footer-table { width: 100%; border-collapse: collapse; margin-top: 5px; border-top: 2px solid #1e3a8a; }
-        .cert-footer-table td { vertical-align: middle; padding-top: 10px; color: #1e3a8a !important; font-size: 12px; font-weight: bold; }
+        .cert-footer-table td { vertical-align: middle; padding-top: 8px; color: #1e3a8a !important; font-size: 11px; font-weight: bold; }
         
         .cert-f-left { width: 40%; text-align: left; font-family: monospace; }
         .cert-f-right { width: 60%; text-align: right; }
         
         .btn-action { background: #10b981 !important; color: white !important; border: none; padding: 15px 30px; font-size: 16px; font-weight: bold; border-radius: 8px; cursor: pointer; text-transform: uppercase; width: 100%; margin-top: 20px; }
 
+        /* ARREGLO DE CONTROL DE IMPRESIÓN FORZADO A 1 HOJA */
         @media print {
             @page { size: A4 landscape; margin: 0; }
-            body, html { background: #ffffff !important; }
+            html, body { background: #ffffff !important; margin: 0 !important; padding: 0 !important; height: 100% !important; overflow: hidden !important; }
             .container, h1, .progress-bar, .fail-box, .btn-action, p:not(.cert-text):not(.cert-location):not(.signature-data) { display: none !important; }
-            #box-passed { display: block !important; }
-            .cert-frame { display: flex !important; border: 2px solid #1e3a8a !important; padding: 40px 50px 30px 220px !important; margin: 0 !important; width: 297mm !important; height: 210mm !important; box-sizing: border-box !important; -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+            #box-passed { display: block !important; width: 100% !important; height: 100% !important; }
+            .cert-frame { 
+                display: flex !important; 
+                border: 2px solid #1e3a8a !important; 
+                padding: 35px 45px 25px 210px !important; 
+                margin: 0 !important; 
+                width: 297mm !important; 
+                height: 210mm !important; 
+                box-sizing: border-box !important; 
+                page-break-inside: avoid !important;
+                page-break-after: avoid !important;
+                background-color: #ffffff !important; 
+                -webkit-print-color-adjust: exact !important; 
+                print-color-adjust: exact !important; 
+            }
             .cert-frame::before { content: '' !important; background: linear-gradient(135deg, #1e3a8a 0%, #1e3a8a 82%, #ecc94b 82%, #ecc94b 85%, transparent 85%) !important; }
             .cert-footer-table td { color: #1e3a8a !important; }
         }
@@ -200,7 +213,7 @@
                         <div class="cert-text">
                             Por haber completado y aprobado satisfactoriamente la evaluación de suficiencia técnica en el <strong>Taller Operativo de la Cadena Logística Internacional Segura OEA Versión 4 (SUNAT) y los controles de Seguridad de la Información e Infraestructura Digital ISO 27001:2022</strong>.
                         </div>
-                        <div class="cert-location">Realizado en el centro de formación virtual de ISO Hub Company. <br> Desarrollado por: ISO Hub Company | Calificación: <span id="cert-score">18/20</span></div>
+                        <div class="cert-location">Realizado en el centro de formación virtual de ISO Hub Company. <br> Calificación: <span id="cert-score">18/20</span></div>
                     </div>
                     
                     <div class="cert-signature-container">
