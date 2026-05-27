@@ -65,12 +65,12 @@
         .btn-next { display: none; background: #ecc94b !important; color: #1e3a8a; border: none; padding: 12px 30px; font-size: 15px; font-weight: bold; border-radius: 6px; cursor: pointer; margin: 20px 0 0 auto; text-transform: uppercase; }
 
         /* ========================================================
-           DISEÑO FINAL COMPACTO PARA EVITAR SEGUNDA HOJA EN PDF
+           DISEÑO FINAL COMPACTADO - MÁXIMA SEGURIDAD ANTI-DESBORDE
            ======================================================== */
         .cert-frame {
             background: #ffffff !important;
             color: #1e3a8a !important; 
-            padding: 35px 45px 25px 210px; 
+            padding: 30px 40px 20px 200px; /* Reducido para dar más holgura al PDF */
             border: 2px solid #1e3a8a;
             border-radius: 4px;
             margin-top: 10px;
@@ -87,7 +87,7 @@
             content: '';
             position: absolute;
             top: 0; left: 0;
-            width: 165px; height: 100%;
+            width: 160px; height: 100%;
             background: linear-gradient(135deg, #1e3a8a 0%, #1e3a8a 82%, #ecc94b 82%, #ecc94b 85%, transparent 85%) !important;
             z-index: 1;
             -webkit-print-color-adjust: exact !important;
@@ -97,25 +97,25 @@
         .cert-content { position: relative; z-index: 2; width: 100%; display: flex; flex-direction: column; justify-content: space-between; height: 100%; flex-grow: 1; }
         
         .cert-header { text-align: center; margin-bottom: 5px; }
-        .cert-logo-box { max-width: 140px; margin: 0 auto 5px auto; }
+        .cert-logo-box { max-width: 135px; margin: 0 auto 5px auto; }
         .cert-logo-box img { max-width: 100%; height: auto; }
         
         .cert-title-main { font-family: 'Georgia', serif; font-size: 38px; font-weight: bold; color: #1e3a8a !important; margin: 0; }
         .cert-subtitle-main { font-size: 15px; letter-spacing: 2px; color: #1e3a8a !important; margin-top: 3px; text-transform: uppercase; font-weight: bold; }
         
-        .cert-body { text-align: center; margin: 15px 0; }
-        .cert-recipient-label { font-size: 16px; font-style: italic; color: #475569; margin-bottom: 5px; }
+        .cert-body { text-align: center; margin: 10px 0; }
+        .cert-recipient-label { font-size: 16px; font-style: italic; color: #475569; margin-bottom: 4px; }
         .cert-recipient { font-family: 'Georgia', serif; font-size: 34px; font-weight: bold; color: #1e3a8a !important; border-bottom: 2px solid #1e3a8a; display: inline-block; padding: 0 35px; margin-bottom: 6px; text-transform: uppercase; }
-        .cert-doc { font-size: 13px; font-weight: bold; margin-bottom: 12px; color: #1e3a8a !important; }
-        .cert-company { font-size: 17px; font-weight: bold; color: #1e3a8a !important; margin-bottom: 20px; text-transform: uppercase; }
+        .cert-doc { font-size: 13px; font-weight: bold; margin-bottom: 10px; color: #1e3a8a !important; }
+        .cert-company { font-size: 17px; font-weight: bold; color: #1e3a8a !important; margin-bottom: 15px; text-transform: uppercase; }
 
         .cert-text { font-size: 16px; line-height: 1.6; margin: 0 auto; max-width: 700px; color: #1e3a8a !important; text-align: center; }
-        .cert-location { font-size: 13px; margin-top: 15px; font-style: italic; font-weight: bold; color: #1e3a8a !important; }
+        .cert-location { font-size: 13px; margin-top: 12px; font-style: italic; font-weight: bold; color: #1e3a8a !important; }
 
-        /* BASE DIVISORIA Y FIRMA ARRIBA */
+        /* BASE DIVISORIA Y FIRMA ARRIBA (SIN PALABRA VIRTUAL) */
         .cert-signature-container {
             text-align: center;
-            margin-top: 20px;
+            margin-top: 15px;
             position: relative;
         }
         .signature-block {
@@ -123,7 +123,7 @@
             position: relative;
             padding-bottom: 5px;
         }
-        .signature-img { height: 70px; width: auto; margin-bottom: -12px; position: relative; z-index: 3; }
+        .signature-img { height: 68px; width: auto; margin-bottom: -12px; position: relative; z-index: 3; }
         .signature-data { font-size: 12px; line-height: 1.4; color: #1e3a8a !important; font-weight: bold; }
 
         .cert-footer-table { width: 100%; border-collapse: collapse; margin-top: 5px; border-top: 2px solid #1e3a8a; }
@@ -134,7 +134,7 @@
         
         .btn-action { background: #10b981 !important; color: white !important; border: none; padding: 15px 30px; font-size: 16px; font-weight: bold; border-radius: 8px; cursor: pointer; text-transform: uppercase; width: 100%; margin-top: 20px; }
 
-        /* ARREGLO DE CONTROL DE IMPRESIÓN FORZADO A 1 HOJA */
+        /* ARREGLO ABSOLUTO DE IMPRESIÓN FORZADO A UNA ÚNICA PÁGINA */
         @media print {
             @page { size: A4 landscape; margin: 0; }
             html, body { background: #ffffff !important; margin: 0 !important; padding: 0 !important; height: 100% !important; overflow: hidden !important; }
@@ -143,7 +143,7 @@
             .cert-frame { 
                 display: flex !important; 
                 border: 2px solid #1e3a8a !important; 
-                padding: 35px 45px 25px 210px !important; 
+                padding: 30px 40px 20px 200px !important; 
                 margin: 0 !important; 
                 width: 297mm !important; 
                 height: 210mm !important; 
@@ -213,7 +213,7 @@
                         <div class="cert-text">
                             Por haber completado y aprobado satisfactoriamente la evaluación de suficiencia técnica en el <strong>Taller Operativo de la Cadena Logística Internacional Segura OEA Versión 4 (SUNAT) y los controles de Seguridad de la Información e Infraestructura Digital ISO 27001:2022</strong>.
                         </div>
-                        <div class="cert-location">Realizado en el centro de formación virtual de ISO Hub Company. <br> Calificación: <span id="cert-score">18/20</span></div>
+                        <div class="cert-location">Realizado en el centro de formación de ISO Hub Company. <br> Calificación: <span id="cert-score">18/20</span></div>
                     </div>
                     
                     <div class="cert-signature-container">
@@ -251,7 +251,7 @@
 <script>
     const bank = [
         { q: "Un conductor logístico reporta que sufrió un 'blackout' o pérdida de señal GPS de 35 minutos en una ruta no autorizada de la provincia. Según el estándar OEA v4 (SUNAT), ¿cuál es el protocolo obligatorio inmediato?", options: [{ text: "Esperar el arribo regular del contenedor.", correct: false, r: "Fallo. Postergar incrementa el riesgo de contaminación." }, { text: "Ordenar detención inmediata y reinspección física del precinto.", correct: true, r: "OEA v4 exige detener la cadena ante pérdida de trazabilidad." }, { text: "Archivar la alerta si el chofer explica por celular.", correct: false, r: "Fallo. Se prohibe basar seguridad en declaraciones verbales." }] },
-        { q: "Bajo la norma ISO 27001:2022, si un colaborador clave cesa funciones, ¿qué control se vulnera si sus accesos siguen activos por 48 horas?", options: [{ text: "Control A.5.1 - Políticas generales.", correct: false, r: "Incorrecto. Este enmarca gobernanza documental." }, { text: "Control A.6.5 - Terminación o cambio de relación laboral.", correct: true, r: "Exige deshabilitación inmediata de accesos tras el cese." }, { text: "Control A.8.20 - Ciberseguridad de redes.", correct: false, r: "Incorrecto. Se enfoca en switches y firewalls." }] },
+        { q: "Bajo la norma ISO 27001:2022, si un colaborador clave del área de comercio exterior cesa funciones, ¿qué control se vulnera si sus accesos siguen activos por 48 horas?", options: [{ text: "Control A.5.1 - Políticas generales.", correct: false, r: "Incorrecto. Este enmarca gobernanza documental." }, { text: "Control A.6.5 - Terminación o cambio de relación laboral.", correct: true, r: "Exige deshabilitación inmediata de accesos tras el cese." }, { text: "Control A.8.20 - Ciberseguridad de redes.", correct: false, r: "Incorrecto. Se enfoca en switches y firewalls." }] },
         { q: "Para auditorías SUNAT, ¿tiempo mínimo de salvaguarda de registros CCTV en almacenes autorizados?", options: [{ text: "15 días calendario.", correct: false, r: "Insuficiente para investigaciones aduaneras." }, { text: "30 días calendario en formato digital.", correct: true, r: "Normativa aduanera exige un piso base de 30 días." }, { text: "6 meses completos.", correct: false, r: "Fallo. El estándar obligatorio base es 30 días." }] },
         { q: "Inspección de 17 puntos: pernos del GenSet brillan como nuevos, chasis tiene óxido natural. ¿Acción?", options: [{ text: "Aprobar el contenedor.", correct: false, r: "Fallo. Asimetrías indican manipulación física." }, { text: "Rechazar unidad y levantar reporte por sospecha.", correct: true, r: "OEA busca detectar anomalías para prevenir dobles fondos." }, { text: "Colocar doble precinto ISO 17712.", correct: false, r: "Fallo. El sello no protege contra alteración estructural." }] },
         { q: "Auditoría: todo el equipo comparte credenciales de un único usuario. ¿Principio e ISO vulnerada?", options: [{ text: "Control A.8.2 de ISO 27001, principio de No Repudio.", correct: true, r: "Se pierde la trazabilidad de quién modificó un dato crítico." }, { text: "Control A.5.15 de gestión de activos físicos.", correct: false, r: "Fallo. Este administra hardware, no accesos lógicos." }, { text: "Cláusula de control de contratistas externos.", correct: false, r: "Fallo. Aplica a personal externo, no autenticación interna." }] },
