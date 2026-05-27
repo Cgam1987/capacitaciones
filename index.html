@@ -340,4 +340,156 @@
         },
         { 
             q: "Durante una inspección técnica pre-operativa de los 17 puntos a un contenedor vacío antes del llenado, se observa que los pernos del GenSet (motor de frío) brillan como nuevos, mientras el chasis tiene óxido natural. ¿Qué acción corresponde?", 
-            options:
+            options: [
+                { text: "Aprobar el contenedor ya que el cambio de pernos indica un correcto mantenimiento mecánico por parte del proveedor.", correct: false, r: "Las asimetrías extremas de desgaste estructural son indicadores clásicos de manipulación física o riesgo de preñado de drogas." }, 
+                { text: "Rechazar la unidad de transporte, paralizar el proceso de llenado y levantar un reporte de alerta por sospecha de alteración física.", correct: true, r: "La inspección de los 17 puntos OEA busca detectar anomalías estructurales sutiles para prevenir dobles fondos." }, 
+                { text: "Colocar doble precinto de alta seguridad ISO 17712 en las barras de las compuertas para compensar la anomalía.", correct: false, r: "El sello de las puertas no mitiga ni protege contra una alteración estructural en el bloque interno del motor." }
+            ] 
+        },
+        { 
+            q: "Un auditor interno detecta que para evitar sobrecostos en licencias de software corporativo, todo el equipo de despacho comparte las credenciales de un único usuario administrador. ¿Qué principio e ISO se vulnera?", 
+            options: [
+                { text: "El control A.8.2 de ISO 27001, destruyendo el principio de No Repudio y la asignación individual de responsabilidades técnicas.", correct: true, r: "Al usar cuentas genéricas o compartidas se pierde por completo la trazabilidad técnica de quién ejecutó o modificó un dato operativo crítico." }, 
+                { text: "El control A.5.15 de gestión de activos de información física corporativa.", correct: false, r: "El control A.5.15 administra el inventario de hardware y clasificación de la data, no las cuentas de acceso lógico." }, 
+                { text: "La cláusula de control operacional de contratistas externos y subcontratación.", correct: false, r: "Aplica para personal externo contratado, no regula la autenticación técnica interna de los sistemas operativos." }
+            ] 
+        },
+        { 
+            q: "El estándar de asociados de negocio de la OEA Versión 4 exige cruzar los datos de clientes y proveedores en bases de datos restrictivas (OFAC/SBS). ¿Cuál es el plazo límite para notificar una alerta positiva detectada interna?", 
+            options: [
+                { text: "Dentro de las 24 horas posteriores a la detección obligatoria del hallazgo operativa.", correct: true, r: "OEA v4 exige un flujo inmediato de comunicación de 24 horas ante alertas de lavado de activos o listas restrictivas OFAC." }, 
+                { text: "Al cierre del ejercicio fiscal contable de la empresa mediante el informe anual de control.", correct: false, r: "Esperar al cierre anual permitiría operaciones comerciales continuas con entidades de altísimo riesgo legal." }, 
+                { text: "A los 5 días hábiles del mes posterior para calzar con la declaración aduanera de SUNAT.", correct: false, r: "Los plazos de control de riesgos delictivos en comercio exterior exigen una respuesta inmediata operativa de 24 horas." }
+            ] 
+        },
+        { 
+            q: "Al auditar las estaciones de trabajo de los operadores de balanza y control de accesos perimetrales, se encuentra que las contraseñas técnicas están escritas en post-its pegados debajo del teclado. ¿Qué control ISO 27001 está fallando?", 
+            options: [
+                { text: "Control A.7.4 - Seguridad física de los perímetros de la planta operativa.", correct: false, r: "El control A.7.4 evalúa barreras físicas como muros, rejas y esclusas de acceso, no políticas de escritorios limpios." }, 
+                { text: "Control A.8.5 - Autenticación segura y el manejo estricto de contraseñas confidenciales.", correct: true, r: "Las contraseñas visibles anulan la efectividad de los accesos protegidos corporativos. Rompe las reglas técnicas de autenticación segura." }, 
+                { text: "Control A.8.24 - Uso adecuado de criptografía avanzada en bases de datos de la nube.", correct: false, r: "La criptografía ve algoritmos de cifrado de bases de datos de la nube, no el comportamiento físico del usuario." }
+            ] 
+        },
+        { 
+            q: "En una inspección de seguridad OEA para transportistas locales de furgones cerrados, ¿cuál es el número de puntos críticos estructurales mínimos que se deben inspeccionar obligatoriamente?", 
+            options: [
+                { text: "El criterio estándar de los 17 puntos de control físico perimetral.", correct: false, r: "Los 17 puntos aplican específicamente para contenedores de carga marítima internacional cerrada y unidades de arrastre." }, 
+                { text: "El criterio estandarizado de los 7 puntos de inspección física para camiones furgones locales cerrados.", correct: true, r: "Para vehículos de transporte local (furgones cerrados), la SUNAT dictamina un protocolo específico de 7 puntos críticos operativos." }, 
+                { text: "Únicamente 3 puntos focalizados técnicos: llantas, tanque de combustible y cabina de conducción.", correct: false, r: "Dejar zonas estructurales críticas sin revisar abre flancos operativos para el transporte ilegítimo de elementos." }
+            ] 
+        },
+        { 
+            q: "Con la finalidad de garantizar la protección de datos frente a conexiones remotas (Home Office), ¿qué mecanismo tecnológico exige la ISO 27001 para validar la identidad técnica de los coordinadores logísticos en la nube?", 
+            options: [
+                { text: "Uso mandatorio de Factor de Doble Autenticación (MFA) complementado con redes privadas cifradas (VPN corporativa).", correct: true, r: "El MFA añade una capa informática robusta asegurando que solo el usuario técnico verificado acceda a la data operativa corporativa." }, 
+                { text: "Modificar el nombre de usuario de las cuentas corporativas cada quince días calendario operativa.", correct: false, r: "Cambiar nombres de usuario de forma constante no frena un ataque cibernético de fuerza bruta si la contraseña es débil." }, 
+                { text: "Instalar únicamente software antivirus comercial gratuito en las computadoras personales de los empleados remotos.", correct: false, r: "El antivirus protege el sistema operativo de malware local, pero no asegura la validación técnica de la identidad." }
+            ] 
+        },
+        { 
+            q: "Bajo la ley de aduanas y los lineamientos del operador OEA, ¿qué estatus legal o condición contractual se exige de forma mandatoria respecto a la subcontratación unilateral del transporte logístico en la cadena de distribución?", 
+            options: [
+                { text: "Se permite la subcontratación libre y unilateral para agilizar la fluidez del puerto operativo.", correct: false, r: "La subcontratación ciega destruye por completo el control de confiabilidad y de la cadena de suministro internacional OEA." }, 
+                { text: "Existe una prohibición total de subcontratación unilateral, requiriendo autorización previa y expresa por escrito del mandante corporativo.", correct: true, r: "Para no romper la trazabilidad técnica OEA, cualquier subcontratación operativa debe ser auditada, visada y autorizada por escrito formalmente." }, 
+                { text: "Se delega la responsabilidad civil íntegra al conductor contratado mediante una declaración jurada simple de cumplimiento aduanero.", correct: false, r: "Las declaraciones juradas técnicas no eximen a la empresa principal de las responsabilidades aduaneras ni de la debida diligencia." }
+            ] 
+        }
+    ];
+
+    let currentIdx = 0;
+    let correctCount = 0;
+    let userName = "";
+    let userId = "";
+
+    function startEvaluation() {
+        userName = document.getElementById('user-name').value.trim();
+        userId = document.getElementById('user-id').value.trim();
+
+        if (userName === "" || userId === "") {
+            alert("Por favor, ingrese sus datos completos antes de comenzar.");
+            return;
+        }
+
+        document.getElementById('scr-login').classList.remove('active');
+        document.getElementById('scr-quiz').classList.add('active');
+        loadQuestion();
+    }
+
+    function loadQuestion() {
+        if (currentIdx >= bank.length) {
+            showFinalResults();
+            return;
+        }
+
+        document.getElementById('quiz-progress').innerText = `PREGUNTA ${currentIdx + 1} DE ${bank.length}`;
+        const qData = bank[currentIdx];
+        document.getElementById('quiz-qtext').innerText = qData.q;
+
+        const optionsZone = document.getElementById('quiz-options');
+        optionsZone.innerHTML = "";
+        document.getElementById('quiz-feedback').style.display = "none";
+        document.getElementById('quiz-nextbtn').style.display = "none";
+
+        qData.options.forEach(opt => {
+            const btn = document.createElement('button');
+            btn.className = "option-btn";
+            btn.innerText = opt.text;
+            btn.onclick = () => evaluateAnswer(opt);
+            optionsZone.appendChild(btn);
+        });
+    }
+
+    function evaluateAnswer(option) {
+        const btns = document.querySelectorAll('.option-btn');
+        btns.forEach(b => b.disabled = true);
+
+        const fb = document.getElementById('quiz-feedback');
+        fb.style.display = "block";
+
+        if (option.correct) {
+            fb.className = "feedback correct";
+            fb.innerHTML = `<strong>¡CORRECTO! SUSTENTO TÉCNICO:</strong><br>${option.r}`;
+            correctCount++;
+        } else {
+            fb.className = "feedback wrong";
+            const correctOpt = bank[currentIdx].options.find(o => o.correct === true);
+            fb.innerHTML = `<strong>INCORRECTO. EXPLICACIÓN:</strong><br>${option.r}<br><br><strong>RESPUESTA CORRECTA:</strong> ${correctOpt.text}`;
+        }
+        document.getElementById('quiz-nextbtn').style.display = "block";
+    }
+
+    function nextQuestion() {
+        currentIdx++;
+        loadQuestion();
+    }
+
+    function showFinalResults() {
+        document.getElementById('scr-quiz').classList.remove('active');
+        document.getElementById('scr-results').classList.add('active');
+
+        const finalScoreNum = Math.round((correctCount / bank.length) * 20);
+        const finalScoreStr = finalScoreNum < 10 ? `0${finalScoreNum}/20` : `${finalScoreNum}/20`;
+
+        if (finalScoreNum >= 14) {
+            document.getElementById('box-passed').style.display = "block";
+            document.getElementById('cert-fullname').innerText = userName.toUpperCase();
+            document.getElementById('cert-docid').innerText = `DOCUMENTO DE IDENTIDAD / CÉDULA DE EXTRANJERÍA: ${userId.toUpperCase()}`;
+            document.getElementById('cert-score').innerText = finalScoreStr;
+            
+            const today = new Date();
+            const dd = String(today.getDate()).padStart(2, '0');
+            const mm = String(today.getMonth() + 1).padStart(2, '0');
+            const yyyy = today.getFullYear();
+            document.getElementById('cert-date').innerText = `${dd}/${mm}/${yyyy}`;
+
+            const randomHex = Math.random().toString(36).substring(2, 8).toUpperCase();
+            document.getElementById('cert-unique-id').innerText = `ISOHUB-${yyyy}-${randomHex}`;
+        } else {
+            document.getElementById('box-failed').style.display = "block";
+            document.getElementById('fail-score').innerText = finalScoreStr;
+        }
+    }
+</script>
+
+</body>
+</html>
